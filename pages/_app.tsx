@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
+import '../styles.css';
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -18,9 +19,6 @@ export default function App(props: AppProps) {
         theme={{
           /** Put your mantine theme override here */
           colorScheme: 'light',
-          other: {
-            FontFace: "Dosis, sans-serif"
-          }
         }}
         
       >

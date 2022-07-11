@@ -1,22 +1,23 @@
 import Link from 'next/link';
-import { Center, Button, MantineProvider, Global } from '@mantine/core';
+import { Center, Button } from '@mantine/core';
+import TitleFrame from "../components/TitleFrame";
+
 
 export default function HomePage() {
 
-  function Header({ title }) {
+  function Title() {
     return (
-    <div style={{backgroundColor: "#000000"}}>
-      <Center>
-        <h1 style={{fontFamily: "Dosis, sans-serif"}}>{title ? title : 'Default title'}</h1>;
-      </Center>
-    </div>
-    );
-  }
+    <div style={{backgroundColor: "#FAFAFA"}}>
+      <h1 style={{
+        fontSize: "60px", 
+        color: "cornflowerblue",
+        fontStyle: "normal",
+        fontWeight: "200",
+        lineHeight: "100px",
+        letterSpacing: "0.15em",
+        }}>Dropability</h1>
 
-  function MenuButton() {
-    return (
-
-    <Link href="" passHref>
+      <Link href="" passHref>
         <Button 
         component="a"
         styles={(theme) => ({
@@ -40,16 +41,18 @@ export default function HomePage() {
           
         </Button>
       </Link>
+    </div>
     );
   }
 
+  function MainContentWindow() {
+    return(
+      <div style={{backgroundColor: "#000000"}}></div>
+    )
+  }
   
   return (
-    <div>
-      <Header title="Dropability" />
-
-      <MenuButton/>
-    </div>
+    <Title/>
   );
 
 }
