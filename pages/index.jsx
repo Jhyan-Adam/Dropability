@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Center, Button } from '@mantine/core';
-import TitleFrame from "../components/TitleFrame";
+//import TitleFrame from "../components/TitleFrame";
 
 
 export default function HomePage() {
