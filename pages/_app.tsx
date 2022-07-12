@@ -20,11 +20,7 @@ export default function App(props: AppProps) {
           /** Put your mantine theme override here */
           colorScheme: 'light',
           fontFamily: "Dosis, sans-serif",
-          colors: {
-            background: "#FAFAFA",
-          },
         }}
-
       >
         <Component {...pageProps} />
         <Container

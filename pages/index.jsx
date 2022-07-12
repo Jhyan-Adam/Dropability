@@ -1,12 +1,13 @@
 
 import { ActionIcon, Button, Image, Text, Container } from '@mantine/core';
 //import MenuButton from "../public"
-import TitleFrame from "../components/TitleFrame/TitleFrame";
+import TitleFrame from "../components/TitleFrame";
+import SearchBar from "../components/SearchBar";
 
 
 export default function HomePage() {
 
-  function Title() {
+  function LandingPage() {
     return (
       <>
         <TitleFrame/>
@@ -19,18 +20,6 @@ export default function HomePage() {
               padding: "10px",
               gap: "10px",
             }}>
-            <Text
-              style={{
-                fontFamily: "Dosis, normal",
-                fontStyle: "normal",
-                fontWeight: "",
-                fontSize: "200%",
-                height: "wrapContent",
-                width: "wrapContent",
-                color: "#858585",
-              }}>
-              Tap to Search
-            </Text>
           </div>
           <div
             style={{
@@ -50,12 +39,13 @@ export default function HomePage() {
               }}>
               <Button
                 style={{
-                  width: "80px",
-                  height: "80px",
+                  width: "500px",
+                  height: "100px",
                   background: "#1CE3CB",
+                  borderRadius: "14px",
                   boxShadow: "0px 6px 14px rgba(0, 0, 0, 0.25)",
                 }}>
-
+                  <Image withPlaceholder src='/MinecraftTitle.png' alt="Minecraft" width={250}/>
               </Button>
             </div>
           </div>
@@ -63,18 +53,8 @@ export default function HomePage() {
     );
   }
 
-  function MainContentWindow() {
-    return (
-      <div
-        style={{
-          backgroundColor: "#000000"
-        }}>
-      </div>
-    )
-  }
-
   return (
-    <Title />
+    <LandingPage />
   );
 
 }
