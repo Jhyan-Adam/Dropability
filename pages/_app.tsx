@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { MantineProvider } from '@mantine/core';
-import '../styles.css';
+import { MantineProvider, Container } from '@mantine/core';
+
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -19,10 +19,24 @@ export default function App(props: AppProps) {
         theme={{
           /** Put your mantine theme override here */
           colorScheme: 'light',
+          fontFamily: "Dosis, sans-serif",
+          colors: {
+            background: "#FAFAFA",
+          },
         }}
-        
+
       >
         <Component {...pageProps} />
+        <Container
+          className="TEST"
+          style={{ marginTop: 10 }}
+          sx={(theme) => ({
+            backgroundColor: theme.colors.gray[0],
+            '&:hover': {
+              backgroundColor: theme.colors.gray[1],
+            },
+          })}
+        />
       </MantineProvider>
     </>
   );
