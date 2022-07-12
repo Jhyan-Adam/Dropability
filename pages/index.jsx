@@ -1,5 +1,5 @@
 
-import { ActionIcon, Button, Image, Text, Container } from '@mantine/core';
+import { ActionIcon, Button, Image, Text, Paper } from '@mantine/core';
 //import MenuButton from "../public"
 import TitleFrame from "../components/TitleFrame";
 import SearchBar from "../components/SearchBar";
@@ -10,7 +10,13 @@ export default function HomePage() {
   function LandingPage() {
     return (
       <>
-        <TitleFrame/>
+        <Paper
+          sx={(theme) => ({
+            height: "100vh",
+            backgroundColor: theme.colorScheme == "light" ? theme.colors.background : theme.colors.dark[7],
+            padding: 0,
+          })}>
+          <TitleFrame/>
           <div
             style={{
               display: "flex",
@@ -45,10 +51,11 @@ export default function HomePage() {
                   borderRadius: "14px",
                   boxShadow: "0px 6px 14px rgba(0, 0, 0, 0.25)",
                 }}>
-                  <Image withPlaceholder src='/MinecraftTitle.png' alt="Minecraft" width={250}/>
+                <Image withPlaceholder src='/MinecraftTitle.png' alt="Minecraft" width={250} />
               </Button>
             </div>
           </div>
+        </Paper>
       </>
     );
   }
