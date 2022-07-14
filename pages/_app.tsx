@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ColorSchemeProvider, ColorScheme, MantineProvider, Container } from '@mantine/core';
@@ -25,21 +25,11 @@ export default function App(props: AppProps) {
             colorScheme: colorScheme,
             fontFamily: "Dosis, sans-serif",
             colors: {
-              background: "#FAFAFA",
+              background: "#F5F5F5",
             },
           }}
         >
           <Component {...pageProps} />
-          <Container
-            className="TEST"
-            style={{ marginTop: 10 }}
-            sx={(theme) => ({
-              backgroundColor: theme.colors.gray[0],
-              '&:hover': {
-                backgroundColor: theme.colors.gray[1],
-              },
-            })}
-          />
         </MantineProvider>
       </ColorSchemeProvider>
     </>

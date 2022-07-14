@@ -1,8 +1,8 @@
 
 import { ActionIcon, Button, Image, Text, Paper } from '@mantine/core';
+import SearchBar from '../components/SearchBar';
 //import MenuButton from "../public"
 import TitleFrame from "../components/TitleFrame";
-import SearchBar from "../components/SearchBar";
 
 
 export default function HomePage() {
@@ -13,47 +13,41 @@ export default function HomePage() {
         <Paper
           sx={(theme) => ({
             height: "100vh",
+            width: "100%",
+            display: "flex",
+            flexFlow: "column",
             backgroundColor: theme.colorScheme == "light" ? theme.colors.background : theme.colors.dark[7],
             padding: 0,
           })}>
-          <TitleFrame/>
+          <TitleFrame />
           <div
             style={{
               display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
+              flexFlow: "column",
               alignItems: "center",
-              padding: "10px",
-              gap: "10px",
-            }}>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              padding: "0px 60px 60px",
               gap: "50px",
+              padding: "2%",
             }}>
-            <div
+            <Button
               style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "flex-start",
-                gap: "50px"
+                width: "500px",
+                height: "100px",
+                background: "#1CE3CB",
+                borderRadius: "14px",
+                boxShadow: "0px 6px 14px rgba(0, 0, 0, 0.25)",
               }}>
-              <Button
-                style={{
-                  width: "500px",
-                  height: "100px",
-                  background: "#1CE3CB",
-                  borderRadius: "14px",
-                  boxShadow: "0px 6px 14px rgba(0, 0, 0, 0.25)",
-                }}>
-                <Image withPlaceholder src='/MinecraftTitle.png' alt="Minecraft" width={250} />
-              </Button>
-            </div>
+              <Image src='/MinecraftTitle.png' alt="Minecraft" width={250} />
+            </Button>
+            <Button
+              style={{
+                width: "500px",
+                height: "100px",
+                background: "#1CE3CB",
+                borderRadius: "14px",
+                boxShadow: "0px 6px 14px rgba(0, 0, 0, 0.25)",
+              }}>
+              <Text sx={(theme) => ({ fontSize: "60px", color: theme.colors.gray[6] })}>Button 2</Text>
+            </Button>
           </div>
         </Paper>
       </>
