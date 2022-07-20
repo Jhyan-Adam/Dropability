@@ -4,9 +4,9 @@ export default function () {
     return (
         <Text
             style={{
-                height: "wrapContent",
+                height: "fit-content",
                 width: "100%",
-                fontSize: "32px",
+                fontSize: "180%",
                 color: "#858585",
                 textAlign: "center",
             }}>

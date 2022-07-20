@@ -24,10 +24,10 @@ function TitleFrame({ text }) {
       </Drawer>
       <Paper
         sx={(theme) => ({
-          height: "wrapContent",
+          height: "fit-content",
           width: "100%",
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "row",
           alignItems: "center",
           backgroundColor: theme.colorScheme === "light" ? "#FFFFFF" : theme.colors.dark[6],
           padding: 0,
@@ -61,19 +61,21 @@ function TitleFrame({ text }) {
           </h1>
           <div
             style={{
+              height: "100%",
               display: "flex",
               justifyContent: "flex-end",
-              alignSelf: "center"
+              //backgroundColor: "black",
             }}>
             <Button
               component="a"
               styles={(theme) => ({
                 root: {
+                  alignSelf: "center",
                   backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : '#FAFAFA',
                   color: '#858585',
-                  height: "80px",
-                  width: "80px",
-                  padding: 0,
+                  height: "fit-content",
+                  width: "fit-content",
+                  padding: "4%",
                   boxShadow: "2px 4px 4px rgba(0, 0, 0, 0.25)",
 
                   '&:hover': {
@@ -83,7 +85,7 @@ function TitleFrame({ text }) {
                 }
               })}
               onClick={() => setOpened(true)}>
-              <Image src="/MenuBars.svg" width="50%" align="center"></Image>
+              <Image src="/MenuBars.svg" width="48px" align="center"/>
             </Button>
           </div>
         </div >
