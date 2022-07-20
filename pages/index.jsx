@@ -1,7 +1,7 @@
 
 import { ActionIcon, Button, Image, Text, Paper } from '@mantine/core';
+import Link from 'next/link';
 import SearchBar from '../components/SearchBar';
-//import MenuButton from "../public"
 import TitleFrame from "../components/TitleFrame";
 
 
@@ -28,16 +28,19 @@ export default function HomePage() {
               gap: "50px",
               padding: "2%",
             }}>
-            <Button
-              style={{
-                width: "500px",
-                height: "100px",
-                background: "#1CE3CB",
-                borderRadius: "14px",
-                boxShadow: "0px 6px 14px rgba(0, 0, 0, 0.25)",
-              }}>
-              <Image src='/MinecraftTitle.png' alt="Minecraft" width={250} />
-            </Button>
+            <Link href={"/Items?game=minecraft"}>
+              <Button
+                style={{
+                  width: "500px",
+                  height: "fit-content",
+                  padding: "2%",
+                  background: "#1CE3CB",
+                  borderRadius: "14px",
+                  boxShadow: "0px 6px 14px rgba(0, 0, 0, 0.25)",
+                }}>
+                <Image src='/MinecraftTitle.png' alt="Minecraft" width={250} />
+              </Button>
+            </Link>
             <Button
               style={{
                 width: "500px",

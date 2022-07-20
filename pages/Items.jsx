@@ -1,17 +1,41 @@
-import { ActionIcon, Button, Image, Text, Paper, ScrollArea } from '@mantine/core';
+import { Button, Image, Text, Paper, ScrollArea } from '@mantine/core';
+import Link from 'next/link'
 import TitleFrame from "../components/TitleFrame";
 import SearchBar from "../components/SearchBar";
 
-export default function HomePage() {
+export default function ItemsPage() {
 
     function LandingPage() {
+
+        let buttonsArr = [];
+        for (let items = 0; items < 28; items++) {
+            buttonsArr.push(
+
+                <Link href={"/Statistics?item=Trident"}>
+                    <Button
+                        style={{
+                            width: "fit-content",
+                            height: "fit-content",
+                            background: "#1CE3CB",
+                            borderRadius: "14px",
+                            padding: "1%",
+                            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                            alignItems: "center",
+                        }}>
+                        <Image withPlaceholder src='Trident.png' alt="Trident" height={70} />
+                    </Button>
+                </Link>
+
+            )
+        }
+
         return (
             <>
 
                 <Paper
                     sx={(theme) => ({
                         height: "100vh",
-                        width: "100%",
+                        width: "100vw",
                         display: "flex",
                         flexFlow: "column",
                         backgroundColor: theme.colorScheme === "light" ? theme.colors.background : theme.colors.dark[7],
@@ -21,46 +45,25 @@ export default function HomePage() {
                     <SearchBar />
                     <ScrollArea
                         sx={{
-                            //FIX THIS HEIGHT
                             height: "100%",
                             width: "100%",
                             display: "flex",
-                            flexFlow: "column",
-                            alignItems: "flex-start",
+                            flexFlow: "wrap",
                             padding: "0% 4% 0% 4%",
-                            gap: "2%",
+                            //backgroundColor: "black",
                         }}>
                         <div
                             style={{
-                                height: "2000px",
-                                width: "100%",
+                                height: "fit-content",
+                                width: "fit-content",
                                 display: "flex",
-                                flexFlow: "row",
-                                alignItems: "flex-start",
-                                padding: "1% 0% 1%",
-                                gap: "2%",
-                                backgroundColor: "",
+                                flexFlow: "wrap",
+                                justifyContent: "center",
+                                padding: "1% 1% 1% 1%",
+                                gap: "50px 50px",
+                                //backgroundColor: "black",
                             }}>
-                            <Button
-                                style={{
-                                    width: "80px",
-                                    height: "80px",
-                                    background: "#1CE3CB",
-                                    borderRadius: "14px",
-                                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
-                                }}>
-                                <Image withPlaceholder src='' alt="Trident" width={250} />
-                            </Button>
-                            <Button
-                                style={{
-                                    width: "80px",
-                                    height: "80px",
-                                    background: "#1CE3CB",
-                                    borderRadius: "14px",
-                                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
-                                }}>
-                                <Image withPlaceholder src='' alt="Trident" width={250} />
-                            </Button>
+                            {buttonsArr}
                         </div>
                     </ScrollArea>
                 </Paper>
