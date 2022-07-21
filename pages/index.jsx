@@ -28,7 +28,7 @@ export default function HomePage() {
               gap: "50px",
               padding: "2%",
             }}>
-            <Link href={"/Items?game=minecraft"}>
+            <Link href={"/items?game=minecraft"}>
               <Button
                 style={{
                   width: "500px",
