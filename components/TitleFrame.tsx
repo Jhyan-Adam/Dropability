@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Container, Paper, Button, Image, Drawer } from '@mantine/core';
+import { Paper, Button, Image, Drawer, Text } from '@mantine/core';
 import { ColorSchemeToggle } from './ColorSchemeToggle';
 
 function TitleFrame({ text }) {
@@ -13,13 +13,60 @@ function TitleFrame({ text }) {
         onClose={() => setOpened(false)}
         title=""
         padding="xl"
-        size="xl"
+        size="md"
         position="right"
         overlayOpacity={0.08}
         overlayBlur={1.5}
         transitionDuration={120}
         transitionTimingFunction="ease"
       >
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-end",
+            gap: "8px",
+          }}>
+          <Link href="/about">
+            <Button size="xl" variant="subtle"
+              sx={(theme) => ({
+                width: "100%",
+                color: "#858585",
+                '&:hover': {
+                  backgroundColor: theme.colorScheme === "light" ? "#F4F4F4" : theme.colors.gray[9],
+                  boxShadow: "3px 3px 6px rgba(0, 0, 0, 0.2)",
+                },
+              })}>
+              <Text
+                sx={{
+                  fontSize: "120%",
+                  letterSpacing: "0.15em",
+                }}>
+                ABOUT
+              </Text>
+            </Button>
+          </Link>
+          <Link href="/">
+            <Button size="xl" variant="subtle"
+              sx={(theme) => ({
+                width: "100%",
+                color: "#858585",
+                '&:hover': {
+                  backgroundColor: theme.colorScheme === "light" ? "#F4F4F4" : theme.colors.gray[9],
+                  boxShadow: "3px 3px 6px rgba(0, 0, 0, 0.2)",
+                },
+              })}>
+              <Text
+                sx={{
+                  fontSize: "120%",
+                  letterSpacing: "0.15em",
+                }}>
+                HOME
+              </Text>
+            </Button>
+          </Link>
+        </div>
 
       </Drawer>
       <Paper
@@ -45,8 +92,8 @@ function TitleFrame({ text }) {
             padding: "1%",
           }}>
           <ColorSchemeToggle />
-          <h1
-            style={{
+          <Text
+            sx={{
               fontSize: "300%",
               color: "cornflowerblue",
               fontStyle: "normal",
@@ -58,7 +105,7 @@ function TitleFrame({ text }) {
               gridColumn: "2",
             }}>
             {text ? text : "Dropability"}
-          </h1>
+          </Text>
           <div
             style={{
               height: "100%",
@@ -85,7 +132,7 @@ function TitleFrame({ text }) {
                 }
               })}
               onClick={() => setOpened(true)}>
-              <Image src="/MenuBars.svg" width="48px" align="center"/>
+              <Image src="/MenuBars.svg" width="48px" align="center" />
             </Button>
           </div>
         </div >
