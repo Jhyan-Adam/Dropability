@@ -2,48 +2,62 @@ import { useState } from 'react';
 import { Card, Paper, Image, Text, ScrollArea, Slider, } from '@mantine/core';
 import TitleFrame from "../components/TitleFrame";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from 'chart.js'
-import { Line, } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import GeoChart from '../components/GeoChart';
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement,
-    {
-        id: "function",
-        beforeInit: function (chart) {
-            var data = chart.config.data;
-
-            for (var i = 0; i < data.datasets.length; i++) {
-                for (var j = 0; j < data.labels.length; j++) {
-                    var fct = data.datasets[i].function,
-                        x = data.labels[j],
-                        y = fct(x);
-                    data.datasets[i].data.push(y);
-                }
-            }
-        }
-    })
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement)
 
 
-//MAKE THIS A FUNCTION SO YOU CAN INPUT THE CUSTOM SLIDER VALUES
-function getGeoChartData(n, p) {
-    return ({
-        labels: Array.from(Array(n).keys()),
-        datasets: [{
-            label: 'TEST GRAPH',
-            function: function (x) { return (1 - ((1 - p) ** x)) },
-            data: [],
-            fill: false,
-            borderColor: '#4BC0C0',
-            pointRadius: "0",
-            tension: "0.1"
-        }]
+function generateData(n = 1000, p = 0.01) {
+    const data = [];
+    for (let index = 0; index < n; index++) {
+        data.push(1 - ((1 - p) ** index));
     }
-    )
+
+    return data;
+};
+
+function generateLineData(n = 240, p = 0.9) {
+    const N = Math.round((Math.log(1 - p)) / (Math.log(1 - 0.01)));
+    const P = (1 - ((1 - 0.01) ** n));
+
+    //const lineData = Array(n).fill(1 - ((1 - 0.01) ** n));
+    //const lineData = Array( Math.round((Math.log(1-p))/(Math.log(1-0.01))) ).fill(p);
+    const lineData = Array(n).fill(P);
+
+    return lineData;
 }
 
+
 export default function statisticsPage() {
+    const [number, setNumber] = useState(240);
     const [probability, setProbability] = useState(0.01);
-    const [number, setNumber] = useState(1000);
-    const [data, setData] = useState(getGeoChartData(number, probability));
+    //const probability = (1 - ((1 - 0.01) ** number));
+
+    const chartData = {
+        labels: Array.from(Array(1000).keys()),
+        datasets: [
+            {
+                label: 'TEST GRAPH',
+                //THIS IS WHERE YOU WILL IMPORT ITEM'S CUSTOM DATA
+                data: generateData(1000, 0.01),
+                fill: false,
+                borderColor: '#4BC0C0',
+                pointRadius: "0",
+                tension: "0.1"
+            },
+            {
+                label: 'TEST LINE',
+                data: generateLineData(number, probability),
+                fill: false,
+                borderColor: '#4BC0C0',
+                pointRadius: "0",
+            }
+        ],
+    };
+
+
+
     let cardArr = [];
 
     for (let i = 0; i < 1; i++) {
@@ -55,44 +69,46 @@ export default function statisticsPage() {
                     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                 }}>
                 <Line
-                    data={data}
+                    data={chartData}
                     width={"400%"}
                     height={"300%"}
                 />
-                <Slider
-                    //SLIDER CAN BE CONFIGURES WITH PROPS/STATES TO INTERACT WITH EACH OTHER SO 2 SLIDERS ARE VIABLE (FOR CHANCE AND TRIALS)
-                    styles={(theme) => ({
-                        thumb: {
-                            height: 16,
-                            width: 16,
-                            backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
-                            borderWidth: 1,
-                            boxShadow: theme.shadows.sm,
-                        },
-                    })}
-                    value={number}
-                    onChange={setNumber}
-                    min={2}
-                    max={1000}
-                />
-                <Slider
-                    //SLIDER CAN BE CONFIGURES WITH PROPS/STATES TO INTERACT WITH EACH OTHER SO 2 SLIDERS ARE VIABLE (FOR CHANCE AND TRIALS)
-                    styles={(theme) => ({
-                        thumb: {
-                            height: 16,
-                            width: 16,
-                            backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
-                            borderWidth: 1,
-                            boxShadow: theme.shadows.sm,
-                        },
-                    })}
-                    value={probability}
-                    onChange={setProbability}
-                    min={0}
-                    max={1}
-                    precision={2}
-                    step={0.01}
-                />
+                <div>
+                    <Slider
+                        //SLIDER CAN BE CONFIGURES WITH PROPS/STATES TO INTERACT WITH EACH OTHER SO 2 SLIDERS ARE VIABLE (FOR CHANCE AND TRIALS)
+                        styles={(theme) => ({
+                            thumb: {
+                                height: 16,
+                                width: 16,
+                                backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
+                                borderWidth: 1,
+                                boxShadow: theme.shadows.sm,
+                            },
+                        })}
+                        value={number}
+                        onChange={setNumber}
+                        min={1}
+                        max={1000}
+                    />
+                    <Slider
+                        styles={(theme) => ({
+                            thumb: {
+                                height: 16,
+                                width: 16,
+                                backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
+                                borderWidth: 1,
+                                boxShadow: theme.shadows.sm,
+                            },
+                        })}
+                        value={probability}
+                        onChange={setProbability}
+                        min={0}
+                        max={1}
+                        precision={2}
+                        step={0.01}
+                        disabled={true}
+                    />
+                </div>
 
             </Card >
         )
@@ -146,13 +162,13 @@ export default function statisticsPage() {
                             </Card>
                         </div>
                         <Card
-                                sx={{
-                                    height: "fit-content",
-                                    width: "fit-content",
-                                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                                }}>
-                                <Image withPlaceholder src="Trident.png" alt="Trident" height={70} />
-                            </Card>
+                            sx={{
+                                height: "fit-content",
+                                width: "fit-content",
+                                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                            }}>
+                            <Image withPlaceholder src="Trident.png" alt="Trident" height={70} />
+                        </Card>
                         {cardArr}
                     </div>
 

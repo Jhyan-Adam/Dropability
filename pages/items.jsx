@@ -1,4 +1,4 @@
-import { Button, Image, Text, Paper, ScrollArea } from '@mantine/core';
+import { Button, Image, Paper, ScrollArea } from '@mantine/core';
 import Link from 'next/link'
 import TitleFrame from "../components/TitleFrame";
 import SearchBar from "../components/SearchBar";
