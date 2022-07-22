@@ -66,6 +66,25 @@ function TitleFrame({ text }) {
               </Text>
             </Button>
           </Link>
+          <Link href="/generalChart">
+            <Button size="xl" variant="subtle"
+              sx={(theme) => ({
+                width: "100%",
+                color: "#858585",
+                '&:hover': {
+                  backgroundColor: theme.colorScheme === "light" ? "#F4F4F4" : theme.colors.gray[9],
+                  boxShadow: "3px 3px 6px rgba(0, 0, 0, 0.2)",
+                },
+              })}>
+              <Text
+                sx={{
+                  fontSize: "120%",
+                  letterSpacing: "0.15em",
+                }}>
+                GENERAL CHART
+              </Text>
+            </Button>
+          </Link>
         </div>
 
       </Drawer>
