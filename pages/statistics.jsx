@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { Card, Paper, Image, Text, ScrollArea, Slider, } from '@mantine/core';
 import TitleFrame from "../components/TitleFrame";
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from 'chart.js'
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler, Animation } from 'chart.js'
 import { Line } from 'react-chartjs-2';
-import GeoChart from '../components/GeoChart';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement)
 
@@ -72,6 +71,15 @@ export default function statisticsPage() {
                     data={chartData}
                     width={"400%"}
                     height={"300%"}
+                    options={{
+                        animation: false,
+                        plugins: {decimation: {
+                            enabled: true, 
+                            algorithm: 'lttb', 
+                            samples: 10
+                        }
+                    }
+                    }}
                 />
                 <div>
                     <Slider

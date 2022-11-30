@@ -107,6 +107,15 @@ export default function generalChartPage() {
                             data={chartData}
                             width={"400%"}
                             height={"300%"}
+                            options={{
+                                animation: false,
+                                plugins: {decimation: {
+                                    enabled: true, 
+                                    algorithm: 'lttb', 
+                                    samples: 2
+                                }
+                            }
+                            }}
                         />
                         <Slider
                             //SLIDER CAN BE CONFIGURES WITH PROPS/STATES TO INTERACT WITH EACH OTHER SO 2 SLIDERS ARE VIABLE (FOR CHANCE AND TRIALS)
