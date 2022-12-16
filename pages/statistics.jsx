@@ -16,12 +16,12 @@ function generateData(n = 1000, p = 0.01) {
     return data;
 };
 
-function generateLineData(n = 240, p = 0.9) {
-    const N = Math.round((Math.log(1 - p)) / (Math.log(1 - 0.01)));
-    const P = (1 - ((1 - 0.01) ** n));
-
-    //const lineData = Array(n).fill(1 - ((1 - 0.01) ** n));
-    //const lineData = Array( Math.round((Math.log(1-p))/(Math.log(1-0.01))) ).fill(p);
+//Full word variable is inherent to chart (might change to global constants imported from DB); single-letter variables are the plugin values
+function generateLineData(n = 240, p = 0.9, number = 240, probability = 0.01) {
+    const N = Math.round(Math.log(0.0001+1-p) / Math.log((1 - probability)));
+    const P = (1 - ((1 - probability) ** n));
+    
+    //Swap cases to swap which slider works:
     const lineData = Array(n).fill(P);
 
     return lineData;
@@ -29,8 +29,9 @@ function generateLineData(n = 240, p = 0.9) {
 
 
 export default function statisticsPage() {
+    //Probably a good idea to make variable names less confusing in future
     const [number, setNumber] = useState(240);
-    const [probability, setProbability] = useState(0.01);
+    const [probability, setProbability] = useState(0.9);
     //const probability = (1 - ((1 - 0.01) ** number));
 
     const chartData = {
@@ -46,12 +47,15 @@ export default function statisticsPage() {
                 tension: "0.1"
             },
             {
-                label: 'TEST LINE',
+                label: 'TEST LINE_Y',
+                //data: Array(number).fill(1 - ((1 - 0.01) ** number)),
+                //data: Array((Math.round(Math.log(0.0001+1-probability) / Math.log((1 - 0.01))))).fill(probability),
                 data: generateLineData(number, probability),
                 fill: false,
                 borderColor: '#4BC0C0',
                 pointRadius: "0",
-            }
+            },
+            //NEED VERTICAL LINE CORRESPONDENT HERE
         ],
     };
 
@@ -83,7 +87,7 @@ export default function statisticsPage() {
                 />
                 <div>
                     <Slider
-                        //SLIDER CAN BE CONFIGURES WITH PROPS/STATES TO INTERACT WITH EACH OTHER SO 2 SLIDERS ARE VIABLE (FOR CHANCE AND TRIALS)
+                        //SLIDER CAN BE CONFIGURED WITH PROPS/STATES TO INTERACT WITH EACH OTHER SO 2 SLIDERS ARE VIABLE (FOR CHANCE AND TRIALS)
                         styles={(theme) => ({
                             thumb: {
                                 height: 16,
@@ -114,7 +118,7 @@ export default function statisticsPage() {
                         max={1}
                         precision={2}
                         step={0.01}
-                        disabled={true}
+                        //disabled={true}
                     />
                 </div>
 

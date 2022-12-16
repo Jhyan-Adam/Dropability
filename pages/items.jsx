@@ -9,6 +9,9 @@ export default function ItemsPage() {
 
         let buttonsArr = [];
         for (let items = 0; items < 28; items++) {
+            //Iterate through a data store file of buttons here to generate each one uniquely with its properties 
+            //SQL implementation? Excel seems a bit limited in usefulness...
+            //JSON seems to be the way to go
             buttonsArr.push(
 
                 <Link href={"/statistics?item=Trident"}>
@@ -41,7 +44,7 @@ export default function ItemsPage() {
                         backgroundColor: theme.colorScheme === "light" ? theme.colors.background : theme.colors.dark[7],
                         padding: 0,
                     })}>
-                    <TitleFrame text="Items" />
+                    <TitleFrame/>
                     <SearchBar />
                     <ScrollArea
                         sx={{

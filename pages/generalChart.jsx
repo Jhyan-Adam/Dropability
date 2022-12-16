@@ -38,7 +38,7 @@ export default function generalChartPage() {
         datasets: [
             {
                 label: 'TEST GRAPH',
-                //THIS IS WHERE YOU WILL IMPORT ITEM'S CUSTOM DATA
+                //THIS IS WHERE YOU WILL IMPORT ITEM'S CUSTOM DATA (USING THE URL STRING AS REFERENCE?)
                 data: generateData(chartMax, probability),
                 fill: false,
                 borderColor: '#4BC0C0',
