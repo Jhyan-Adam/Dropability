@@ -20,6 +20,8 @@ export default function HomePage() {
             padding: 0,
           })}>
           <TitleFrame />
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3430353182515812"
+            crossorigin="anonymous"></script>
           <div
             style={{
               display: "flex",
