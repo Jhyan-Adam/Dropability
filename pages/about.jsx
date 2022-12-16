@@ -58,7 +58,7 @@ export default function aboutPage() {
                             </Text>
                         </CardSection>
                         <Text size="lg" weight={700} color="#5E5E5E">
-                            This website is a compendium of items from video games that have been implemented as random drops. It lists two types; the first type consists of items that have a fixed chance to drop and a fixed chance to not drop. The second type includes all items which may be dropped multiple times, but the number of items that actually drop is assigned to random chance; each possible number is assigned its own fixed chance. 
+                            This website is a compendium of items from video games that have been implemented as random drops. It lists two types; the first type consists of items that have a fixed chance to drop and a fixed chance to not drop (they may not drop at all). The second type includes all items which may be dropped multiple times, but the number of items that actually drop is assigned to random chance; each possible number is assigned its own fixed chance (and they are guaranteed to drop). 
                             <br/><br/> The website is intended to make understanding your drop rates clear through interactive visualisation of these problems with the use of statistical modelling. If you want to have an idea of your chances of obtaining items instead of blindly grinding, the data here will be useful to you.
                         </Text>
                     </Card>
