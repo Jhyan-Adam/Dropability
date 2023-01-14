@@ -3,6 +3,7 @@ import { Card, Paper, Image, Text, ScrollArea, Slider, } from '@mantine/core';
 import TitleFrame from "../components/TitleFrame";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler, Animation } from 'chart.js'
 import { Line } from 'react-chartjs-2';
+import { useRouter } from "next/router";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement)
 
@@ -18,9 +19,9 @@ function generateData(n = 1000, p = 0.01) {
 
 //Full word variable is inherent to chart (might change to global constants imported from DB); single-letter variables are the plugin values
 function generateLineData(n = 240, p = 0.9, number = 240, probability = 0.01) {
-    const N = Math.round(Math.log(0.0001+1-p) / Math.log((1 - probability)));
+    const N = Math.round(Math.log(0.0001 + 1 - p) / Math.log((1 - probability)));
     const P = (1 - ((1 - probability) ** n));
-    
+
     //Swap cases to swap which slider works:
     const lineData = Array(n).fill(P);
 
@@ -30,6 +31,8 @@ function generateLineData(n = 240, p = 0.9, number = 240, probability = 0.01) {
 
 export default function statisticsPage() {
     //Probably a good idea to make variable names less confusing in future
+    let router = useRouter();
+    let id = router.query["item"];
     const [number, setNumber] = useState(240);
     const [probability, setProbability] = useState(0.9);
     //const probability = (1 - ((1 - 0.01) ** number));
@@ -77,12 +80,13 @@ export default function statisticsPage() {
                     height={"300%"}
                     options={{
                         animation: false,
-                        plugins: {decimation: {
-                            enabled: true, 
-                            algorithm: 'lttb', 
-                            samples: 10
+                        plugins: {
+                            decimation: {
+                                enabled: true,
+                                algorithm: 'lttb',
+                                samples: 10
+                            }
                         }
-                    }
                     }}
                 />
                 <div>
@@ -118,7 +122,7 @@ export default function statisticsPage() {
                         max={1}
                         precision={2}
                         step={0.01}
-                        //disabled={true}
+                    //disabled={true}
                     />
                 </div>
 
@@ -179,7 +183,7 @@ export default function statisticsPage() {
                                 width: "fit-content",
                                 boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                             }}>
-                            <Image withPlaceholder src="Trident.png" alt="Trident" height={70} />
+                            <Image style={{imageRendering: "pixelated"}} withPlaceholder src={`/minecraftItemIcons/${id}.png`} alt={`${"trident"}`} height={96} />
                         </Card>
                         {cardArr}
                     </div>

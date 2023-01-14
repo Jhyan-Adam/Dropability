@@ -72,7 +72,7 @@ export default function ItemsPage(props) {
                                             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
                                             alignItems: "center",
                                         }}>
-                                        <Image withPlaceholder src={`/minecraftItemIcons/${item.gameID}.png`} alt="Trident" height={70} />
+                                        <Image style={{imageRendering: "pixelated"}} withPlaceholder src={`/minecraftItemIcons/${item.gameID}.png`} alt="Trident" height={64} />
                                     </Button>
                                 </Link>)
                         }
