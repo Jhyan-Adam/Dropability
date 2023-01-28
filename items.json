@@ -52,7 +52,7 @@
             "itemID": 5.0,
             "itemName": "Apple",
             "gameID": "apple",
-            "itemDescription": "Food item typically obtained from leaves",
+            "itemDescription": "Food item typically obtained from leaves.",
             "?sourceCount?": 1.0,
             "[completed?]": "T",
             "adminNotes": null,
@@ -303,7 +303,7 @@
         {
             "itemID": 26.0,
             "itemName": "Copper Ingot",
-            "gameID": "copper_ingot\t",
+            "gameID": "copper_ingot",
             "itemDescription": "Crafting item dropped by drowned.",
             "?sourceCount?": 1.0,
             "[completed?]": "F",
