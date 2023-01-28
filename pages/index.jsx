@@ -34,6 +34,7 @@ export default function HomePage() {
               <Button
                 style={{
                   width: "500px",
+                  //Fix sizing for mobile
                   height: "fit-content",
                   padding: "2%",
                   background: "#1CE3CB",

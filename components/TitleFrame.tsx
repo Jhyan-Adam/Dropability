@@ -141,6 +141,7 @@ function TitleFrame({ text }) {
                   alignSelf: "center",
                   backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : '#FAFAFA',
                   color: '#858585',
+                  //Fix sizing for mobile
                   height: "fit-content",
                   width: "fit-content",
                   padding: "4%",

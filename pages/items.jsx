@@ -7,7 +7,7 @@ import path from 'path'
 
 
 export async function getStaticProps() {
-    const filePath = path.join(process.cwd(), 'items.json');
+    const filePath = path.join(process.cwd(), 'minecraftData.json');
     const jsonData = await fsPromises.readFile(filePath);
     const objectData = JSON.parse(jsonData);
 
@@ -18,10 +18,9 @@ export async function getStaticProps() {
 
 export default function ItemsPage(props) {
 
-    console.log(props);
+    //console.log(props);
     const items = props.items;
-    let buttonsArr = [];
-    let itemNumber = Object.keys(props).length
+    //let buttonsArr = [];
 
     return (
         <>
@@ -72,7 +71,14 @@ export default function ItemsPage(props) {
                                             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
                                             alignItems: "center",
                                         }}>
-                                        <Image style={{imageRendering: "pixelated"}} withPlaceholder src={`/minecraftItemIcons/${item.gameID}.png`} alt="Trident" height={64} />
+                                        <Image
+                                            style={{imageRendering: "pixelated"}}
+                                            src={`/minecraftItemIcons/${item.gameID}.png`}
+                                            alt={item.itemName}
+                                            width={64}
+                                            height={64}
+                                            withPlaceholder
+                                        />
                                     </Button>
                                 </Link>)
                         }
