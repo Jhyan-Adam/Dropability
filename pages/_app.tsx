@@ -26,7 +26,13 @@ export default function App(props: AppProps) {
             fontFamily: "Dosis, sans-serif",
             colors: {
               background: "#F5F5F5",
+              button: "#1CE3CB",
+              dimCyan: "#4BC0C0",
             },
+            //like the fontSizes, I must add my own site-wide standards here
+            fontSizes: {
+              itemTitle: "140%"
+            }
           }}
         >
           <Component {...pageProps} />
