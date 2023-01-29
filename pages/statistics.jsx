@@ -101,8 +101,6 @@ function generateChartData(inputNumber = 1000, pValue = 0.01, numberFromSlider =
             },
             {
                 label: 'TEST LINE Y',
-                //data: Array(number).fill(1 - ((1 - 0.01) ** number)),
-                //data: Array((Math.round(Math.log(0.0001+1-probability) / Math.log((1 - 0.01))))).fill(probability),
                 data: generateHorizontalLineData(inputNumber, pValue, numberFromSlider, probabilityFromSlider),
                 fill: false,
                 borderColor: '#4BC0C0',
@@ -117,13 +115,10 @@ function generateChartData(inputNumber = 1000, pValue = 0.01, numberFromSlider =
 
 
 export default function statisticsPage(props) {
-    //Probably a good idea to make variable names less confusing in future
     const router = useRouter();
     const itemIDfromURL = router.query["item"];
     const itemData = getItemData(props, itemIDfromURL)
     const sourceArray = getSourceData(props, itemIDfromURL);
-    //const itemName = getItemData(props)[0]; 
-    //const itemDescription = getItemData(props)[1];
     const [numberSlider, setNumberSlider] = useState(0);
     const [probabilitySlider, setProbabilitySlider] = useState(0.9);
     //const probability = (1 - ((1 - 0.01) ** number));
@@ -133,7 +128,6 @@ export default function statisticsPage(props) {
     for (let source in sourceArray) {
         const pValue = eval(sourceArray[source].binomialData.pValue);
         const nValue = Math.round(Math.log(0.0001 + 1 - 0.999) / Math.log((1 - pValue)));
-        //console.log(sourceArray[source]);
 
         cardArr.push(
             <Card
