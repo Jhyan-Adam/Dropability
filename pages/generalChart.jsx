@@ -16,22 +16,23 @@ function generateData(n = 1000, p = 0.01) {
     return data;
 };
 
-function generateLineData(n = 240, p = 0.01) {
+function generateHorizontalLineData(numberFromSlider = 240, pValue = 0.01) {
     //const N = Math.round((Math.log(1-p))/(Math.log(1-0.01)));
-    const P = (1 - ((1 - p) ** n));
+    const P = (1 - ((1 - pValue) ** numberFromSlider));
 
     //const lineData = Array(n).fill(1 - ((1 - 0.01) ** n));
     //const lineData = Array( Math.round((Math.log(1-p))/(Math.log(1-0.01))) ).fill(p);
-    const lineData = Array(n).fill(P);
+    const lineData = Array(numberFromSlider+1).fill(P);
 
     return lineData;
 }
 
 export default function generalChartPage() {
-    const [number, setNumber] = useState(240);
-    const [probability, setProbability] = useState(0.01);
-    const [chartMax, setChartMax] = useState(1000);
+    const [numberSlider, setNumberSlider] = useState(240);
+    const [pValueSlider, setProbabilitySlider] = useState(0.01);
+    //const [chartMax, setChartMax] = useState(1000);
     //const probability = (1 - ((1 - 0.01) ** number));
+    const chartMax = Math.round(Math.log(0.0001 + 1 - 0.999) / Math.log((1 - pValueSlider)));
 
     const chartData = {
         labels: Array.from(Array(chartMax).keys()),
@@ -39,7 +40,7 @@ export default function generalChartPage() {
             {
                 label: 'TEST GRAPH',
                 //THIS IS WHERE YOU WILL IMPORT ITEM'S CUSTOM DATA (USING THE URL STRING AS REFERENCE?)
-                data: generateData(chartMax, probability),
+                data: generateData(chartMax, pValueSlider),
                 fill: false,
                 borderColor: '#4BC0C0',
                 pointRadius: "0",
@@ -47,7 +48,7 @@ export default function generalChartPage() {
             },
             {
                 label: 'TEST LINE',
-                data: generateLineData(number, probability),
+                data: generateHorizontalLineData(numberSlider, pValueSlider),
                 fill: false,
                 borderColor: '#4BC0C0',
                 pointRadius: "0",
@@ -128,10 +129,10 @@ export default function generalChartPage() {
                                     boxShadow: theme.shadows.sm,
                                 },
                             })}
-                            value={number}
-                            onChange={setNumber}
-                            min={1}
-                            max={1000}
+                            value={numberSlider}
+                            onChange={setNumberSlider}
+                            min={0}
+                            max={chartMax}
                         />
                         <Slider
                             styles={(theme) => ({
@@ -143,8 +144,8 @@ export default function generalChartPage() {
                                     boxShadow: theme.shadows.sm,
                                 },
                             })}
-                            value={probability}
-                            onChange={setProbability}
+                            value={pValueSlider}
+                            onChange={setProbabilitySlider}
                             min={0}
                             max={1}
                             precision={2}
@@ -161,27 +162,12 @@ export default function generalChartPage() {
                                     boxShadow: theme.shadows.sm,
                                 },
                             })}
-                            value={probability}
-                            onChange={setProbability}
-                            min={0}
+                            value={pValueSlider}
+                            onChange={setProbabilitySlider}
+                            min={0.001}
                             max={1}
                             precision={6}
                             step={0.000001}
-                        />
-                        <Slider
-                            styles={(theme) => ({
-                                thumb: {
-                                    height: 16,
-                                    width: 16,
-                                    backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
-                                    borderWidth: 1,
-                                    boxShadow: theme.shadows.sm,
-                                },
-                            })}
-                            value={chartMax}
-                            onChange={setChartMax}
-                            min={2}
-                            max={10000}
                         />
                     </Card>
                 </div>
