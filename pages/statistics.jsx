@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, Paper, Image, Text, ScrollArea, Slider, } from '@mantine/core';
+import { Card, Paper, Image, Text, ScrollArea, Slider, CardSection, } from '@mantine/core';
 import TitleFrame from "../components/TitleFrame";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler, Animation } from 'chart.js'
 import { Line } from 'react-chartjs-2';
@@ -81,7 +81,7 @@ function generateHorizontalLineData(number = 240, pValue = 0.01, numberFromSlide
     const P = (1 - ((1 - pValue) ** numberFromSlider));
 
     //Swap cases to swap which slider works:
-    const lineData = Array(numberFromSlider+1).fill(P);
+    const lineData = Array(numberFromSlider + 1).fill(P);
 
     return lineData;
 }
@@ -126,6 +126,8 @@ export default function statisticsPage(props) {
     let cardArr = [];
 
     for (let source in sourceArray) {
+        const sourceName = sourceArray[source].source.sourceName;
+        const sourceText = sourceArray[source].source.sourceText;
         const pValue = eval(sourceArray[source].binomialData.pValue);
         const nValue = Math.round(Math.log(0.0001 + 1 - 0.999) / Math.log((1 - pValue)));
 
@@ -136,6 +138,20 @@ export default function statisticsPage(props) {
                     width: "fit-content",
                     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                 }}>
+                <CardSection sx={{ paddingInlineStart: "6%" }}>
+                    <Text
+                        sx={{//make function of theme
+                            fontSize: "200%",
+                            color: "cornflowerblue",
+                            fontStyle: "normal",
+                            letterSpacing: "0.15em",
+                            fontWeight: "700",
+                            textAlign: "start",
+                            padding: "18px",
+                        }}>
+                        {sourceName}
+                    </Text>
+                </CardSection>
                 <Line
                     //THIS IS WHERE YOU WILL IMPORT ITEM'S CUSTOM DATA - perhaps make n a function of p to avoid overly large data?
                     data={generateChartData(nValue, pValue, numberSlider, probabilitySlider)}
@@ -152,6 +168,20 @@ export default function statisticsPage(props) {
                         }
                     }}
                 />
+                <CardSection>
+                    <Text
+                        sx={{//make function of theme
+                            fontSize: "120%",
+                            color: "gray",
+                            fontStyle: "normal",
+                            letterSpacing: "0.15em",
+                            fontWeight: "700",
+                            textAlign: "start",
+                            padding: "18px",
+                        }}>
+                        {sourceText}
+                    </Text>
+                </CardSection>
                 <div>
                     <Slider
                         //SLIDER CAN BE CONFIGURED WITH PROPS/STATES TO INTERACT WITH EACH OTHER SO 2 SLIDERS ARE VIABLE (FOR CHANCE AND TRIALS)
@@ -265,7 +295,7 @@ export default function statisticsPage(props) {
                                     width: "fit-content",
                                     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                                 })}>
-                                <Text size="lg" weight={700} color="dimCyan">
+                                <Text size="lg" weight={700} color="gray">
                                     {itemData[1]}
                                 </Text>
                             </Card>
