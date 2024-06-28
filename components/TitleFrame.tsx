@@ -140,8 +140,10 @@ function TitleFrame({ text }) {
                 root: {
                   alignSelf: "center",
                   backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : '#FAFAFA',
-                  color: '#858585',
+                  color: '#858585', //???
                   //Fix sizing for mobile
+                  //minHeight: "95%",
+                  //minWidth: "60px",
                   height: "fit-content",
                   width: "fit-content",
                   padding: "4%",
@@ -154,7 +156,7 @@ function TitleFrame({ text }) {
                 }
               })}
               onClick={() => setOpened(true)}>
-              <Image src="/MenuBars.svg" width="48px" align="center" />
+              <Image src="/MenuBars.svg" maxWidth="99%" width="48px" align="center" />
             </Button>
           </div>
         </div >

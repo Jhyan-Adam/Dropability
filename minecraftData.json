@@ -9,7 +9,8 @@
             "[completed?]": null,
             "adminNotes": "ATTENTION REQUIRED also mention exceptions",
             "looting": 1.0,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 2.0,
             "itemName": "[Potions]",
@@ -19,7 +20,8 @@
             "[completed?]": "?",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 3.0,
             "itemName": "[Tool]",
@@ -29,7 +31,8 @@
             "[completed?]": "?",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 4.0,
             "itemName": "Amethyst",
@@ -39,7 +42,8 @@
             "[completed?]": null,
             "adminNotes": "ABNORMAL",
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 5.0,
             "itemName": "Apple",
@@ -49,7 +53,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": 2.0,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 6.0,
             "itemName": "Arrow",
@@ -59,7 +64,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": 1.0,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 7.0,
             "itemName": "Arrow of Slowness",
@@ -69,7 +75,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": 2.0,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 8.0,
             "itemName": "Baby Chicken",
@@ -79,7 +86,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": 0.0,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 9.0,
             "itemName": "Bamboo",
@@ -89,7 +97,8 @@
             "[completed?]": "F",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 11.0,
             "itemName": "Beetroot Seeds",
@@ -99,7 +108,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": 1.0},
+            "fortune": 1.0
+        },
         {
             "itemID": 12.0,
             "itemName": "Blaze Rod",
@@ -109,7 +119,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": 1.0,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 13.0,
             "itemName": "Bone Meal",
@@ -119,7 +130,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": 1.0,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 14.0,
             "itemName": "Bones",
@@ -129,7 +141,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": 2.0,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 18.0,
             "itemName": "Carrot",
@@ -139,7 +152,8 @@
             "[completed?]": "P",
             "adminNotes": "ABNORMAL",
             "looting": 3.0,
-            "fortune": 3.0},
+            "fortune": 3.0
+        },
         {
             "itemID": 19.0,
             "itemName": "Carved Pumpkin",
@@ -149,7 +163,8 @@
             "[completed?]": "F",
             "adminNotes": "Equipment",
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 22.0,
             "itemName": "Chorus Fruit",
@@ -159,7 +174,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": 0.0},
+            "fortune": 0.0
+        },
         {
             "itemID": 24.0,
             "itemName": "Coal",
@@ -169,7 +185,8 @@
             "[completed?]": "T",
             "adminNotes": " ore source is not critical; ABNORMAL;",
             "looting": 2.0,
-            "fortune": "unknown"},
+            "fortune": "unknown"
+        },
         {
             "itemID": 25.0,
             "itemName": "Cod",
@@ -179,7 +196,8 @@
             "[completed?]": "F",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 26.0,
             "itemName": "Copper Ingot",
@@ -189,7 +207,8 @@
             "[completed?]": "F",
             "adminNotes": null,
             "looting": 3.0,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 27.0,
             "itemName": "Crying Obsidian",
@@ -199,7 +218,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 28.0,
             "itemName": "Diamond",
@@ -209,7 +229,8 @@
             "[completed?]": "F",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 29.0,
             "itemName": "Emerald",
@@ -219,7 +240,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": 2.0,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 31.0,
             "itemName": "Enchanted Book (Soul Speed)",
@@ -229,7 +251,8 @@
             "[completed?]": "F",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 32.0,
             "itemName": "Ender Pearl",
@@ -239,7 +262,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": 2.0,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 33.0,
             "itemName": "Eye of Ender",
@@ -249,7 +273,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 34.0,
             "itemName": "Feather",
@@ -259,7 +284,8 @@
             "[completed?]": "F",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 35.0,
             "itemName": "Fire Charge",
@@ -269,7 +295,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 36.0,
             "itemName": "Flint",
@@ -279,7 +306,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 37.0,
             "itemName": "Ghast Tear",
@@ -289,7 +317,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 38.0,
             "itemName": "Glow Ink Sac",
@@ -299,7 +328,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 39.0,
             "itemName": "Glowstone Dust",
@@ -309,7 +339,8 @@
             "[completed?]": "T",
             "adminNotes": "Difficult",
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 40.0,
             "itemName": "Gold Ingot",
@@ -319,7 +350,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 41.0,
             "itemName": "Raw Gold",
@@ -329,7 +361,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 42.0,
             "itemName": "Gold Nugget",
@@ -339,7 +372,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 43.0,
             "itemName": "Gravel",
@@ -349,7 +383,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 44.0,
             "itemName": "Gunpowder",
@@ -359,7 +394,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 46.0,
             "itemName": "Honeycomb",
@@ -369,7 +405,8 @@
             "[completed?]": "X",
             "adminNotes": "investigate",
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 47.0,
             "itemName": "Ink Sac",
@@ -379,7 +416,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 48.0,
             "itemName": "Iron Ingot",
@@ -389,7 +427,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 49.0,
             "itemName": "Iron Nugget",
@@ -399,7 +438,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 50.0,
             "itemName": "Kelp",
@@ -409,7 +449,8 @@
             "[completed?]": "X",
             "adminNotes": "investigate",
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 51.0,
             "itemName": "Lapis Lazuli",
@@ -419,7 +460,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 53.0,
             "itemName": "Leather",
@@ -429,7 +471,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 54.0,
             "itemName": "Magma Cream",
@@ -439,7 +482,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 55.0,
             "itemName": "Melon Slice",
@@ -449,7 +493,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 56.0,
             "itemName": "Melon Seeds",
@@ -459,7 +504,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 60.0,
             "itemName": "Nautilus Shell",
@@ -469,7 +515,8 @@
             "[completed?]": "F",
             "adminNotes": "Equipment",
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 61.0,
             "itemName": "Nether Brick",
@@ -479,7 +526,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 62.0,
             "itemName": "Nether Quartz",
@@ -489,7 +537,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 64.0,
             "itemName": "Netherrite Scrap",
@@ -499,7 +548,8 @@
             "[completed?]": "X",
             "adminNotes": "investigate",
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 65.0,
             "itemName": "Obsidian",
@@ -509,7 +559,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 66.0,
             "itemName": "Phantom Membrane",
@@ -519,7 +570,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 67.0,
             "itemName": "Poisonous Potato",
@@ -529,7 +581,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 68.0,
             "itemName": "Poppy Flower",
@@ -539,7 +592,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 69.0,
             "itemName": "Potato",
@@ -549,7 +603,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 70.0,
             "itemName": "Potion of Fire Resistance",
@@ -559,7 +614,8 @@
             "[completed?]": "T",
             "adminNotes": "Double chance to include splash potion",
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 72.0,
             "itemName": "Prismarine Crystal",
@@ -569,7 +625,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 73.0,
             "itemName": "Prismarine Shard",
@@ -579,7 +636,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 74.0,
             "itemName": "Pufferfish",
@@ -589,7 +647,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 75.0,
             "itemName": "Pumpkin Seeds",
@@ -599,7 +658,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 76.0,
             "itemName": "Rabbit's Foot",
@@ -609,7 +669,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 77.0,
             "itemName": "Raw Beef",
@@ -619,7 +680,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 78.0,
             "itemName": "Raw Chicken",
@@ -629,7 +691,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 79.0,
             "itemName": "Raw Copper",
@@ -639,7 +702,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 80.0,
             "itemName": "Raw Iron",
@@ -649,7 +713,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 81.0,
             "itemName": "Raw Mutton",
@@ -659,7 +724,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 82.0,
             "itemName": "Raw Porkchop",
@@ -669,7 +735,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 83.0,
             "itemName": "Raw Rabbit",
@@ -679,7 +746,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 84.0,
             "itemName": "Rotten Flesh",
@@ -689,7 +757,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 86.0,
             "itemName": "Raw Salmon",
@@ -699,7 +768,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 88.0,
             "itemName": "Seagrass",
@@ -709,7 +779,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 89.0,
             "itemName": "Shulker Shell",
@@ -719,7 +790,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 90.0,
             "itemName": "Slimeball",
@@ -729,7 +801,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 91.0,
             "itemName": "Snowballs",
@@ -739,7 +812,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 92.0,
             "itemName": "Soul Sand",
@@ -749,7 +823,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 93.0,
             "itemName": "Spider Eye",
@@ -759,7 +834,8 @@
             "[completed?]": "T",
             "adminNotes": "CHECK OTHER ITEMS WITH 0-1 DROPS",
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 95.0,
             "itemName": "String",
@@ -769,7 +845,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 96.0,
             "itemName": "Sweet Berries",
@@ -779,7 +856,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 99.0,
             "itemName": "Trident",
@@ -789,7 +867,8 @@
             "[completed?]": "U",
             "adminNotes": "Equipment",
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 100.0,
             "itemName": "Tropical Fish",
@@ -799,7 +878,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 103.0,
             "itemName": "Wither Skull",
@@ -809,7 +889,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 104.0,
             "itemName": "Wool",
@@ -819,7 +900,8 @@
             "[completed?]": "T",
             "adminNotes": "ID is dependent on colout.",
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 105.0,
             "itemName": "Blackstone",
@@ -829,7 +911,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 106.0,
             "itemName": "Spectral Arrow",
@@ -839,7 +922,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 107.0,
             "itemName": "Soul Speed Iron Boots",
@@ -849,7 +933,8 @@
             "[completed?]": null,
             "adminNotes": "Equipment",
             "looting": null,
-            "fortune": null},
+            "fortune": null
+        },
         {
             "itemID": 108.0,
             "itemName": "Redstone Dust",
@@ -859,7 +944,8 @@
             "[completed?]": "T",
             "adminNotes": null,
             "looting": null,
-            "fortune": null}
+            "fortune": null
+        }
     ],
     "sources": [
         {
@@ -869,7 +955,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 2.0,
             "sourceName": "Humanoid Mobs With Equipment",
@@ -877,7 +964,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 1.0,
-            "adminNotes": "linked to multiple items"},
+            "adminNotes": "linked to multiple items"
+        },
         {
             "sourceID": 3.0,
             "sourceName": "Skeleton or Stray",
@@ -885,7 +973,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 1.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 4.0,
             "sourceName": "Stray",
@@ -893,7 +982,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 5.0,
             "sourceName": "Thrown Egg",
@@ -901,15 +991,17 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 6.0,
             "sourceName": "Mature Beetroot",
             "sourceText": "Breaking mature beetroot drops 1 to 4 beetroot seeds. If not mature, breaking yields only 1 beetroot seeds item.",
             "sourceIndex": 1.0,
-            "type": true,
+            "type": false,
             "Enchantment": 3.0,
-            "adminNotes": "Conflicting data (1-4)"},
+            "adminNotes": "Conflicting data (1-4)"
+        },
         {
             "sourceID": 7.0,
             "sourceName": "Blaze",
@@ -917,7 +1009,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 8.0,
             "sourceName": "Any Fish ",
@@ -925,7 +1018,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 1.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 9.0,
             "sourceName": "Sekelton Variants",
@@ -933,7 +1027,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 10.0,
             "sourceName": "Zombie Variants",
@@ -941,7 +1036,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 1.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 11.0,
             "sourceName": "Farming Carrots",
@@ -949,7 +1045,8 @@
             "sourceIndex": 2.0,
             "type": false,
             "Enchantment": 4.0,
-            "adminNotes": "ABNORMAL CDF"},
+            "adminNotes": "ABNORMAL CDF"
+        },
         {
             "sourceID": 12.0,
             "sourceName": "Chorus Plant",
@@ -957,7 +1054,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 13.0,
             "sourceName": "Wither Skeleton",
@@ -965,7 +1063,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 4.0,
-            "adminNotes": "ABNORMAL"},
+            "adminNotes": "ABNORMAL"
+        },
         {
             "sourceID": 14.0,
             "sourceName": "Polar Bear",
@@ -973,7 +1072,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 15.0,
             "sourceName": "Dolphin",
@@ -981,7 +1081,8 @@
             "sourceIndex": 2.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 16.0,
             "sourceName": "Guardian",
@@ -989,7 +1090,8 @@
             "sourceIndex": 3.0,
             "type": true,
             "Enchantment": null,
-            "adminNotes": "UNFINISHED"},
+            "adminNotes": "UNFINISHED"
+        },
         {
             "sourceID": 17.0,
             "sourceName": "Elder Guardian",
@@ -997,7 +1099,8 @@
             "sourceIndex": 4.0,
             "type": true,
             "Enchantment": null,
-            "adminNotes": "UNFINISHED"},
+            "adminNotes": "UNFINISHED"
+        },
         {
             "sourceID": 18.0,
             "sourceName": "Drowned",
@@ -1005,7 +1108,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 19.0,
             "sourceName": "Bartering",
@@ -1013,7 +1117,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 20.0,
             "sourceName": "Vindicator or Evoker",
@@ -1021,7 +1126,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 21.0,
             "sourceName": "Enderman",
@@ -1029,7 +1135,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 22.0,
             "sourceName": "Guardian Rare Drop",
@@ -1037,7 +1144,8 @@
             "sourceIndex": 5.0,
             "type": true,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 23.0,
             "sourceName": "Elder Guardian Rare Drop",
@@ -1045,7 +1153,8 @@
             "sourceIndex": 6.0,
             "type": true,
             "Enchantment": 4.0,
-            "adminNotes": "May be abnormal"},
+            "adminNotes": "May be abnormal"
+        },
         {
             "sourceID": 24.0,
             "sourceName": "Eye of Ender Entity",
@@ -1053,7 +1162,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 25.0,
             "sourceName": "Chicken",
@@ -1061,7 +1171,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 26.0,
             "sourceName": "Parrot",
@@ -1069,7 +1180,8 @@
             "sourceIndex": 2.0,
             "type": false,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 27.0,
             "sourceName": "Bartering",
@@ -1077,7 +1189,8 @@
             "sourceIndex": 2.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 28.0,
             "sourceName": "Bartering",
@@ -1085,7 +1198,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 29.0,
             "sourceName": "Gravel",
@@ -1093,7 +1207,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 30.0,
             "sourceName": "Ghast",
@@ -1101,7 +1216,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 31.0,
             "sourceName": "Glow Squid",
@@ -1109,7 +1225,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 2.0,
-            "adminNotes": "Possibly not type 2. investigate similar items"},
+            "adminNotes": "Possibly not type 2. investigate similar items"
+        },
         {
             "sourceID": 32.0,
             "sourceName": "Witch",
@@ -1117,7 +1234,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 33.0,
             "sourceName": "Glowstone Block",
@@ -1125,7 +1243,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 34.0,
             "sourceName": "Zombified Piglin",
@@ -1133,7 +1252,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 1.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 35.0,
             "sourceName": "Gold Ore",
@@ -1141,7 +1261,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 3.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 36.0,
             "sourceName": "Coal Ore",
@@ -1149,7 +1270,8 @@
             "sourceIndex": 2.0,
             "type": false,
             "Enchantment": 3.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 37.0,
             "sourceName": "Zombified Piglin",
@@ -1157,7 +1279,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 38.0,
             "sourceName": "Nether Gold Ore",
@@ -1165,7 +1288,8 @@
             "sourceIndex": 2.0,
             "type": false,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 39.0,
             "sourceName": "Gilded Blackstone",
@@ -1173,7 +1297,8 @@
             "sourceIndex": 3.0,
             "type": false,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 40.0,
             "sourceName": "Gravel Block",
@@ -1181,7 +1306,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 41.0,
             "sourceName": "Bartering",
@@ -1189,7 +1315,8 @@
             "sourceIndex": 2.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 42.0,
             "sourceName": "Creeper",
@@ -1197,7 +1324,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 43.0,
             "sourceName": "Ghast",
@@ -1205,7 +1333,8 @@
             "sourceIndex": 2.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 44.0,
             "sourceName": "Witch",
@@ -1213,7 +1342,8 @@
             "sourceIndex": 3.0,
             "type": true,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 45.0,
             "sourceName": "Squid",
@@ -1221,7 +1351,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 46.0,
             "sourceName": "Zombie Variants",
@@ -1229,7 +1360,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 1.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 47.0,
             "sourceName": "Iron Golem",
@@ -1237,7 +1369,8 @@
             "sourceIndex": 2.0,
             "type": false,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 48.0,
             "sourceName": "Bartering",
@@ -1245,7 +1378,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 49.0,
             "sourceName": "Lapis Lazuli Ore",
@@ -1253,7 +1387,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 3.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 50.0,
             "sourceName": "Leather Mobs",
@@ -1261,7 +1396,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 51.0,
             "sourceName": "Bartering",
@@ -1269,7 +1405,8 @@
             "sourceIndex": 2.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 52.0,
             "sourceName": "Magma Cube",
@@ -1277,7 +1414,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 53.0,
             "sourceName": "Melon",
@@ -1285,7 +1423,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 54.0,
             "sourceName": "Melon Stem",
@@ -1293,7 +1432,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 55.0,
             "sourceName": "Bartering",
@@ -1301,7 +1441,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 56.0,
             "sourceName": "Nether Quartz Ore",
@@ -1309,7 +1450,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 3.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 57.0,
             "sourceName": "Bartering",
@@ -1317,7 +1459,8 @@
             "sourceIndex": 2.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 58.0,
             "sourceName": "Bartering",
@@ -1325,7 +1468,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 59.0,
             "sourceName": "Phantom",
@@ -1333,7 +1477,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 60.0,
             "sourceName": "Potato Crop",
@@ -1341,7 +1486,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 61.0,
             "sourceName": "Iron Golem",
@@ -1349,7 +1495,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 62.0,
             "sourceName": "Potato Crop",
@@ -1357,7 +1504,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 3.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 63.0,
             "sourceName": "Zombie Variants",
@@ -1365,7 +1513,8 @@
             "sourceIndex": 2.0,
             "type": true,
             "Enchantment": 1.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 64.0,
             "sourceName": "Bartering",
@@ -1373,7 +1522,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 65.0,
             "sourceName": "Guardian",
@@ -1381,7 +1531,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 66.0,
             "sourceName": "Elder Guardian",
@@ -1389,7 +1540,8 @@
             "sourceIndex": 2.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 67.0,
             "sourceName": "Sea Lantern",
@@ -1397,7 +1549,8 @@
             "sourceIndex": 3.0,
             "type": false,
             "Enchantment": 3.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 68.0,
             "sourceName": "Guardian or Elder Guardian",
@@ -1405,7 +1558,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 69.0,
             "sourceName": "Guardian or Elder Guardian",
@@ -1413,7 +1567,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 70.0,
             "sourceName": "Pumpkin Stem",
@@ -1421,7 +1576,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 3.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 71.0,
             "sourceName": "Rabbit",
@@ -1429,7 +1585,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 72.0,
             "sourceName": "Cow",
@@ -1437,7 +1594,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 73.0,
             "sourceName": "Chicken",
@@ -1445,7 +1603,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": "ore",
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 74.0,
             "sourceName": "Copper Ore",
@@ -1453,7 +1612,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 75.0,
             "sourceName": "Iron Ore",
@@ -1461,7 +1621,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 3.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 76.0,
             "sourceName": "Sheep",
@@ -1469,7 +1630,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 77.0,
             "sourceName": "Pig",
@@ -1477,7 +1639,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 78.0,
             "sourceName": "Hoglin",
@@ -1485,7 +1648,8 @@
             "sourceIndex": 2.0,
             "type": false,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 79.0,
             "sourceName": "Rabbit",
@@ -1493,7 +1657,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 80.0,
             "sourceName": "Zombie Variants",
@@ -1501,7 +1666,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 81.0,
             "sourceName": "Zombified Piglin",
@@ -1509,7 +1675,8 @@
             "sourceIndex": 2.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 82.0,
             "sourceName": "Zoglin",
@@ -1517,7 +1684,8 @@
             "sourceIndex": 3.0,
             "type": false,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 83.0,
             "sourceName": "Polar Bear",
@@ -1525,7 +1693,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 84.0,
             "sourceName": "Guardian or Elder Guardian",
@@ -1533,7 +1702,8 @@
             "sourceIndex": 2.0,
             "type": true,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 85.0,
             "sourceName": "Turtle",
@@ -1541,7 +1711,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 86.0,
             "sourceName": "Shulker",
@@ -1549,7 +1720,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 87.0,
             "sourceName": "Slime",
@@ -1557,7 +1729,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 88.0,
             "sourceName": "Baby Panda",
@@ -1565,7 +1738,8 @@
             "sourceIndex": 2.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 89.0,
             "sourceName": "Snow Golem",
@@ -1573,7 +1747,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 90.0,
             "sourceName": "Bartering",
@@ -1581,7 +1756,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 91.0,
             "sourceName": "Spider",
@@ -1589,7 +1765,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 92.0,
             "sourceName": "Witch",
@@ -1597,7 +1774,8 @@
             "sourceIndex": 2.0,
             "type": true,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 93.0,
             "sourceName": "Cat",
@@ -1605,7 +1783,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 94.0,
             "sourceName": "Strider",
@@ -1613,7 +1792,8 @@
             "sourceIndex": 2.0,
             "type": false,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 95.0,
             "sourceName": "Spider",
@@ -1621,7 +1801,8 @@
             "sourceIndex": 3.0,
             "type": true,
             "Enchantment": 2.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 96.0,
             "sourceName": "Bartering",
@@ -1629,7 +1810,8 @@
             "sourceIndex": 4.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 97.0,
             "sourceName": "Mature Sweet Berry Bush",
@@ -1637,7 +1819,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 3.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 98.0,
             "sourceName": "2/3 Mature Sweet Berry Bush",
@@ -1645,7 +1828,8 @@
             "sourceIndex": 2.0,
             "type": false,
             "Enchantment": 3.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 99.0,
             "sourceName": "Drowned",
@@ -1653,7 +1837,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 1.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 100.0,
             "sourceName": "Guardian or Elder Guardian",
@@ -1661,7 +1846,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 4.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 101.0,
             "sourceName": "Wither Skeleton",
@@ -1669,7 +1855,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 1.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 102.0,
             "sourceName": "Sheep",
@@ -1677,7 +1864,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 103.0,
             "sourceName": "Bartering",
@@ -1685,7 +1873,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 104.0,
             "sourceName": "Bartering",
@@ -1693,7 +1882,8 @@
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 0.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 105.0,
             "sourceName": "Emerald Ore",
@@ -1701,7 +1891,8 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 3.0,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 106.0,
             "sourceName": "Redstone Ore",
@@ -1709,664 +1900,847 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 3.0,
-            "adminNotes": null}
+            "adminNotes": null
+        }
     ],
     "javaBinomialSources": [
         {
             "sourceID": 1.0,
-            "pValue": "0.005"},
+            "pValue": "0.005"
+        },
         {
             "sourceID": 2.0,
-            "pValue": "0.085"},
+            "pValue": "0.085"
+        },
         {
             "sourceID": 3.0,
-            "pValue": "2/3"},
+            "pValue": "2/3"
+        },
         {
             "sourceID": 4.0,
-            "pValue": "0.5"},
+            "pValue": "0.5"
+        },
         {
             "sourceID": 5.0,
-            "pValue": "0.84375"},
+            "pValue": "0.84375"
+        },
         {
             "sourceID": 7.0,
-            "pValue": "0.5"},
+            "pValue": "0.5"
+        },
         {
             "sourceID": 8.0,
-            "pValue": "0.05"},
+            "pValue": "0.05"
+        },
         {
             "sourceID": 9.0,
-            "pValue": "2/3"},
+            "pValue": "2/3"
+        },
         {
             "sourceID": 10.0,
-            "pValue": "0.025"},
+            "pValue": "0.025"
+        },
         {
             "sourceID": 12.0,
-            "pValue": "0.5"},
+            "pValue": "0.5"
+        },
         {
             "sourceID": 13.0,
-            "pValue": "1/3"},
+            "pValue": "1/3"
+        },
         {
             "sourceID": 14.0,
-            "pValue": "0.5"},
+            "pValue": "0.5"
+        },
         {
             "sourceID": 15.0,
-            "pValue": "0.5"},
+            "pValue": "0.5"
+        },
         {
             "sourceID": 16.0,
-            "pValue": "0.4"},
+            "pValue": "0.4"
+        },
         {
             "sourceID": 17.0,
-            "pValue": "0.5"},
+            "pValue": "0.5"
+        },
         {
             "sourceID": 18.0,
-            "pValue": "0.11"},
+            "pValue": "0.11"
+        },
         {
             "sourceID": 19.0,
-            "pValue": "40/459"},
+            "pValue": "40/459"
+        },
         {
             "sourceID": 20.0,
-            "pValue": "0.5"},
+            "pValue": "0.5"
+        },
         {
             "sourceID": 21.0,
-            "pValue": "0.5"},
+            "pValue": "0.5"
+        },
         {
             "sourceID": 22.0,
-            "pValue": "0.015"},
+            "pValue": "0.015"
+        },
         {
             "sourceID": 23.0,
-            "pValue": "0.015"},
+            "pValue": "0.015"
+        },
         {
             "sourceID": 24.0,
-            "pValue": "0.8"},
+            "pValue": "0.8"
+        },
         {
             "sourceID": 25.0,
-            "pValue": "2/3"},
+            "pValue": "2/3"
+        },
         {
             "sourceID": 27.0,
-            "pValue": "10/459"},
+            "pValue": "10/459"
+        },
         {
             "sourceID": 28.0,
-            "pValue": "40/459"},
+            "pValue": "40/459"
+        },
         {
             "sourceID": 29.0,
-            "pValue": "0.1"},
+            "pValue": "0.1"
+        },
         {
             "sourceID": 30.0,
-            "pValue": "0.5"},
+            "pValue": "0.5"
+        },
         {
             "sourceID": 32.0,
-            "pValue": "3/28"},
+            "pValue": "3/28"
+        },
         {
             "sourceID": 34.0,
-            "pValue": "0.025"},
+            "pValue": "0.025"
+        },
         {
             "sourceID": 37.0,
-            "pValue": "0.5"},
+            "pValue": "0.5"
+        },
         {
             "sourceID": 40.0,
-            "pValue": "0.9"},
+            "pValue": "0.9"
+        },
         {
             "sourceID": 41.0,
-            "pValue": "40/459"},
+            "pValue": "40/459"
+        },
         {
             "sourceID": 42.0,
-            "pValue": "2/3"},
+            "pValue": "2/3"
+        },
         {
             "sourceID": 43.0,
-            "pValue": "2/3"},
+            "pValue": "2/3"
+        },
         {
             "sourceID": 44.0,
-            "pValue": "3/28"},
+            "pValue": "3/28"
+        },
         {
             "sourceID": 46.0,
-            "pValue": "0.025"},
+            "pValue": "0.025"
+        },
         {
             "sourceID": 48.0,
-            "pValue": "10/459"},
+            "pValue": "10/459"
+        },
         {
             "sourceID": 50.0,
-            "pValue": "1/3"},
+            "pValue": "1/3"
+        },
         {
             "sourceID": 51.0,
-            "pValue": "40/459"},
+            "pValue": "40/459"
+        },
         {
             "sourceID": 52.0,
-            "pValue": "0.5"},
+            "pValue": "0.5"
+        },
         {
             "sourceID": 54.0,
-            "pValue": "0.75"},
+            "pValue": "0.75"
+        },
         {
             "sourceID": 55.0,
-            "pValue": "40/459"},
+            "pValue": "40/459"
+        },
         {
             "sourceID": 57.0,
-            "pValue": "20/459"},
+            "pValue": "20/459"
+        },
         {
             "sourceID": 58.0,
-            "pValue": "40/459"},
+            "pValue": "40/459"
+        },
         {
             "sourceID": 59.0,
-            "pValue": "0.5"},
+            "pValue": "0.5"
+        },
         {
             "sourceID": 60.0,
-            "pValue": "0.02"},
+            "pValue": "0.02"
+        },
         {
             "sourceID": 61.0,
-            "pValue": "2/3"},
+            "pValue": "2/3"
+        },
         {
             "sourceID": 63.0,
-            "pValue": "0.025"},
+            "pValue": "0.025"
+        },
         {
             "sourceID": 64.0,
-            "pValue": "16/459"},
+            "pValue": "16/459"
+        },
         {
             "sourceID": 65.0,
-            "pValue": "0.4"},
+            "pValue": "0.4"
+        },
         {
             "sourceID": 66.0,
-            "pValue": "1/3"},
+            "pValue": "1/3"
+        },
         {
             "sourceID": 68.0,
-            "pValue": "2/3"},
+            "pValue": "2/3"
+        },
         {
             "sourceID": 69.0,
-            "pValue": "0.00325"},
+            "pValue": "0.00325"
+        },
         {
             "sourceID": 70.0,
-            "pValue": "0.75"},
+            "pValue": "0.75"
+        },
         {
             "sourceID": 71.0,
-            "pValue": "0.1"},
+            "pValue": "0.1"
+        },
         {
             "sourceID": 80.0,
-            "pValue": "2/3"},
+            "pValue": "2/3"
+        },
         {
             "sourceID": 81.0,
-            "pValue": "0.5"},
+            "pValue": "0.5"
+        },
         {
             "sourceID": 83.0,
-            "pValue": "5/6"},
+            "pValue": "5/6"
+        },
         {
             "sourceID": 84.0,
-            "pValue": "0.00625"},
+            "pValue": "0.00625"
+        },
         {
             "sourceID": 85.0,
-            "pValue": "2/3"},
+            "pValue": "2/3"
+        },
         {
             "sourceID": 86.0,
-            "pValue": "0.5"},
+            "pValue": "0.5"
+        },
         {
             "sourceID": 87.0,
-            "pValue": "2/3"},
+            "pValue": "2/3"
+        },
         {
             "sourceID": 88.0,
-            "pValue": "1/700"},
+            "pValue": "1/700"
+        },
         {
             "sourceID": 89.0,
-            "pValue": "14/15"},
+            "pValue": "14/15"
+        },
         {
             "sourceID": 90.0,
-            "pValue": "40/459"},
+            "pValue": "40/459"
+        },
         {
             "sourceID": 91.0,
-            "pValue": "1/3"},
+            "pValue": "1/3"
+        },
         {
             "sourceID": 92.0,
-            "pValue": "3/28"},
+            "pValue": "3/28"
+        },
         {
             "sourceID": 93.0,
-            "pValue": "2/3"},
+            "pValue": "2/3"
+        },
         {
             "sourceID": 95.0,
-            "pValue": "2/3"},
+            "pValue": "2/3"
+        },
         {
             "sourceID": 96.0,
-            "pValue": "20/459"},
+            "pValue": "20/459"
+        },
         {
             "sourceID": 99.0,
-            "pValue": "0.085"},
+            "pValue": "0.085"
+        },
         {
             "sourceID": 100.0,
-            "pValue": "0.0005"},
+            "pValue": "0.0005"
+        },
         {
             "sourceID": 101.0,
-            "pValue": "0.025"},
+            "pValue": "0.025"
+        },
         {
             "sourceID": 103.0,
-            "pValue": "40/459"},
+            "pValue": "40/459"
+        },
         {
             "sourceID": 104.0,
-            "pValue": "40/459"}
+            "pValue": "40/459"
+        }
     ],
     "javaItemSourceLink": [
         {
             "linkID": 1.0,
             "itemID": 1.0,
-            "sourceID": 2.0},
+            "sourceID": 2.0
+        },
         {
             "linkID": 2.0,
             "itemID": 5.0,
-            "sourceID": 1.0},
+            "sourceID": 1.0
+        },
         {
             "linkID": 3.0,
             "itemID": 3.0,
-            "sourceID": 2.0},
+            "sourceID": 2.0
+        },
         {
             "linkID": 4.0,
             "itemID": 7.0,
-            "sourceID": 4.0},
+            "sourceID": 4.0
+        },
         {
             "linkID": 5.0,
             "itemID": 8.0,
-            "sourceID": 5.0},
+            "sourceID": 5.0
+        },
         {
             "linkID": 6.0,
             "itemID": 11.0,
-            "sourceID": 6.0},
+            "sourceID": 6.0
+        },
         {
             "linkID": 7.0,
             "itemID": 12.0,
-            "sourceID": 7.0},
+            "sourceID": 7.0
+        },
         {
             "linkID": 8.0,
             "itemID": 13.0,
-            "sourceID": 8.0},
+            "sourceID": 8.0
+        },
         {
             "linkID": 9.0,
             "itemID": 14.0,
-            "sourceID": 9.0},
+            "sourceID": 9.0
+        },
         {
             "linkID": 10.0,
             "itemID": 18.0,
-            "sourceID": 10.0},
+            "sourceID": 10.0
+        },
         {
             "linkID": 11.0,
             "itemID": 18.0,
-            "sourceID": 11.0},
+            "sourceID": 11.0
+        },
         {
             "linkID": 12.0,
             "itemID": 22.0,
-            "sourceID": 12.0},
+            "sourceID": 12.0
+        },
         {
             "linkID": 13.0,
             "itemID": 24.0,
-            "sourceID": 13.0},
+            "sourceID": 13.0
+        },
         {
             "linkID": 14.0,
             "itemID": 25.0,
-            "sourceID": 14.0},
+            "sourceID": 14.0
+        },
         {
             "linkID": 15.0,
             "itemID": 25.0,
-            "sourceID": 15.0},
+            "sourceID": 15.0
+        },
         {
             "linkID": 16.0,
             "itemID": 25.0,
-            "sourceID": 16.0},
+            "sourceID": 16.0
+        },
         {
             "linkID": 17.0,
             "itemID": 25.0,
-            "sourceID": 17.0},
+            "sourceID": 17.0
+        },
         {
             "linkID": 18.0,
             "itemID": 26.0,
-            "sourceID": 18.0},
+            "sourceID": 18.0
+        },
         {
             "linkID": 19.0,
             "itemID": 27.0,
-            "sourceID": 19.0},
+            "sourceID": 19.0
+        },
         {
             "linkID": 20.0,
             "itemID": 29.0,
-            "sourceID": 20.0},
+            "sourceID": 20.0
+        },
         {
             "linkID": 21.0,
             "itemID": 32.0,
-            "sourceID": 21.0},
+            "sourceID": 21.0
+        },
         {
             "linkID": 22.0,
             "itemID": 25.0,
-            "sourceID": 22.0},
+            "sourceID": 22.0
+        },
         {
             "linkID": 23.0,
             "itemID": 25.0,
-            "sourceID": 23.0},
+            "sourceID": 23.0
+        },
         {
             "linkID": 24.0,
             "itemID": 33.0,
-            "sourceID": 24.0},
+            "sourceID": 24.0
+        },
         {
             "linkID": 25.0,
             "itemID": 34.0,
-            "sourceID": 25.0},
+            "sourceID": 25.0
+        },
         {
             "linkID": 26.0,
             "itemID": 34.0,
-            "sourceID": 26.0},
+            "sourceID": 26.0
+        },
         {
             "linkID": 27.0,
             "itemID": 32.0,
-            "sourceID": 27.0},
+            "sourceID": 27.0
+        },
         {
             "linkID": 28.0,
             "itemID": 35.0,
-            "sourceID": 28.0},
+            "sourceID": 28.0
+        },
         {
             "linkID": 29.0,
             "itemID": 36.0,
-            "sourceID": 29.0},
+            "sourceID": 29.0
+        },
         {
             "linkID": 30.0,
             "itemID": 37.0,
-            "sourceID": 30.0},
+            "sourceID": 30.0
+        },
         {
             "linkID": 31.0,
             "itemID": 38.0,
-            "sourceID": 31.0},
+            "sourceID": 31.0
+        },
         {
             "linkID": 32.0,
             "itemID": 39.0,
-            "sourceID": 32.0},
+            "sourceID": 32.0
+        },
         {
             "linkID": 33.0,
             "itemID": 39.0,
-            "sourceID": 33.0},
+            "sourceID": 33.0
+        },
         {
             "linkID": 34.0,
             "itemID": 40.0,
-            "sourceID": 34.0},
+            "sourceID": 34.0
+        },
         {
             "linkID": 35.0,
             "itemID": 41.0,
-            "sourceID": 35.0},
+            "sourceID": 35.0
+        },
         {
             "linkID": 36.0,
             "itemID": 24.0,
-            "sourceID": 36.0},
+            "sourceID": 36.0
+        },
         {
             "linkID": 37.0,
             "itemID": 42.0,
-            "sourceID": 37.0},
+            "sourceID": 37.0
+        },
         {
             "linkID": 38.0,
             "itemID": 42.0,
-            "sourceID": 38.0},
+            "sourceID": 38.0
+        },
         {
             "linkID": 39.0,
             "itemID": 42.0,
-            "sourceID": 39.0},
+            "sourceID": 39.0
+        },
         {
             "linkID": 40.0,
             "itemID": 43.0,
-            "sourceID": 40.0},
+            "sourceID": 40.0
+        },
         {
             "linkID": 41.0,
             "itemID": 43.0,
-            "sourceID": 41.0},
+            "sourceID": 41.0
+        },
         {
             "linkID": 42.0,
             "itemID": 44.0,
-            "sourceID": 42.0},
+            "sourceID": 42.0
+        },
         {
             "linkID": 43.0,
             "itemID": 44.0,
-            "sourceID": 43.0},
+            "sourceID": 43.0
+        },
         {
             "linkID": 44.0,
             "itemID": 44.0,
-            "sourceID": 44.0},
+            "sourceID": 44.0
+        },
         {
             "linkID": 45.0,
             "itemID": 47.0,
-            "sourceID": 45.0},
+            "sourceID": 45.0
+        },
         {
             "linkID": 46.0,
             "itemID": 48.0,
-            "sourceID": 46.0},
+            "sourceID": 46.0
+        },
         {
             "linkID": 47.0,
             "itemID": 48.0,
-            "sourceID": 47.0},
+            "sourceID": 47.0
+        },
         {
             "linkID": 48.0,
             "itemID": 49.0,
-            "sourceID": 48.0},
+            "sourceID": 48.0
+        },
         {
             "linkID": 49.0,
             "itemID": 51.0,
-            "sourceID": 49.0},
+            "sourceID": 49.0
+        },
         {
             "linkID": 50.0,
             "itemID": 53.0,
-            "sourceID": 50.0},
+            "sourceID": 50.0
+        },
         {
             "linkID": 51.0,
             "itemID": 53.0,
-            "sourceID": 51.0},
+            "sourceID": 51.0
+        },
         {
             "linkID": 52.0,
             "itemID": 54.0,
-            "sourceID": 52.0},
+            "sourceID": 52.0
+        },
         {
             "linkID": 53.0,
             "itemID": 55.0,
-            "sourceID": 53.0},
+            "sourceID": 53.0
+        },
         {
             "linkID": 54.0,
             "itemID": 56.0,
-            "sourceID": 54.0},
+            "sourceID": 54.0
+        },
         {
             "linkID": 55.0,
             "itemID": 61.0,
-            "sourceID": 55.0},
+            "sourceID": 55.0
+        },
         {
             "linkID": 56.0,
             "itemID": 62.0,
-            "sourceID": 56.0},
+            "sourceID": 56.0
+        },
         {
             "linkID": 57.0,
             "itemID": 62.0,
-            "sourceID": 57.0},
+            "sourceID": 57.0
+        },
         {
             "linkID": 58.0,
             "itemID": 65.0,
-            "sourceID": 58.0},
+            "sourceID": 58.0
+        },
         {
             "linkID": 59.0,
             "itemID": 66.0,
-            "sourceID": 59.0},
+            "sourceID": 59.0
+        },
         {
             "linkID": 60.0,
             "itemID": 67.0,
-            "sourceID": 60.0},
+            "sourceID": 60.0
+        },
         {
             "linkID": 61.0,
             "itemID": 68.0,
-            "sourceID": 61.0},
+            "sourceID": 61.0
+        },
         {
             "linkID": 62.0,
             "itemID": 69.0,
-            "sourceID": 62.0},
+            "sourceID": 62.0
+        },
         {
             "linkID": 63.0,
             "itemID": 69.0,
-            "sourceID": 63.0},
+            "sourceID": 63.0
+        },
         {
             "linkID": 64.0,
             "itemID": 70.0,
-            "sourceID": 64.0},
+            "sourceID": 64.0
+        },
         {
             "linkID": 65.0,
             "itemID": 72.0,
-            "sourceID": 65.0},
+            "sourceID": 65.0
+        },
         {
             "linkID": 66.0,
             "itemID": 72.0,
-            "sourceID": 66.0},
+            "sourceID": 66.0
+        },
         {
             "linkID": 67.0,
             "itemID": 72.0,
-            "sourceID": 67.0},
+            "sourceID": 67.0
+        },
         {
             "linkID": 68.0,
             "itemID": 73.0,
-            "sourceID": 68.0},
+            "sourceID": 68.0
+        },
         {
             "linkID": 69.0,
             "itemID": 74.0,
-            "sourceID": 69.0},
+            "sourceID": 69.0
+        },
         {
             "linkID": 70.0,
             "itemID": 75.0,
-            "sourceID": 70.0},
+            "sourceID": 70.0
+        },
         {
             "linkID": 71.0,
             "itemID": 76.0,
-            "sourceID": 71.0},
+            "sourceID": 71.0
+        },
         {
             "linkID": 72.0,
             "itemID": 77.0,
-            "sourceID": 72.0},
+            "sourceID": 72.0
+        },
         {
             "linkID": 73.0,
             "itemID": 78.0,
-            "sourceID": 73.0},
+            "sourceID": 73.0
+        },
         {
             "linkID": 74.0,
             "itemID": 79.0,
-            "sourceID": 74.0},
+            "sourceID": 74.0
+        },
         {
             "linkID": 75.0,
             "itemID": 80.0,
-            "sourceID": 75.0},
+            "sourceID": 75.0
+        },
         {
             "linkID": 76.0,
             "itemID": 81.0,
-            "sourceID": 76.0},
+            "sourceID": 76.0
+        },
         {
             "linkID": 77.0,
             "itemID": 82.0,
-            "sourceID": 77.0},
+            "sourceID": 77.0
+        },
         {
             "linkID": 78.0,
             "itemID": 82.0,
-            "sourceID": 78.0},
+            "sourceID": 78.0
+        },
         {
             "linkID": 79.0,
             "itemID": 83.0,
-            "sourceID": 79.0},
+            "sourceID": 79.0
+        },
         {
             "linkID": 80.0,
             "itemID": 84.0,
-            "sourceID": 80.0},
+            "sourceID": 80.0
+        },
         {
             "linkID": 81.0,
             "itemID": 84.0,
-            "sourceID": 81.0},
+            "sourceID": 81.0
+        },
         {
             "linkID": 82.0,
             "itemID": 84.0,
-            "sourceID": 82.0},
+            "sourceID": 82.0
+        },
         {
             "linkID": 83.0,
             "itemID": 86.0,
-            "sourceID": 83.0},
+            "sourceID": 83.0
+        },
         {
             "linkID": 84.0,
             "itemID": 86.0,
-            "sourceID": 84.0},
+            "sourceID": 84.0
+        },
         {
             "linkID": 85.0,
             "itemID": 88.0,
-            "sourceID": 85.0},
+            "sourceID": 85.0
+        },
         {
             "linkID": 86.0,
             "itemID": 89.0,
-            "sourceID": 86.0},
+            "sourceID": 86.0
+        },
         {
             "linkID": 87.0,
             "itemID": 90.0,
-            "sourceID": 87.0},
+            "sourceID": 87.0
+        },
         {
             "linkID": 88.0,
             "itemID": 90.0,
-            "sourceID": 88.0},
+            "sourceID": 88.0
+        },
         {
             "linkID": 89.0,
             "itemID": 91.0,
-            "sourceID": 89.0},
+            "sourceID": 89.0
+        },
         {
             "linkID": 90.0,
             "itemID": 92.0,
-            "sourceID": 90.0},
+            "sourceID": 90.0
+        },
         {
             "linkID": 91.0,
             "itemID": 93.0,
-            "sourceID": 91.0},
+            "sourceID": 91.0
+        },
         {
             "linkID": 92.0,
             "itemID": 93.0,
-            "sourceID": 92.0},
+            "sourceID": 92.0
+        },
         {
             "linkID": 93.0,
             "itemID": 95.0,
-            "sourceID": 93.0},
+            "sourceID": 93.0
+        },
         {
             "linkID": 94.0,
             "itemID": 95.0,
-            "sourceID": 94.0},
+            "sourceID": 94.0
+        },
         {
             "linkID": 95.0,
             "itemID": 95.0,
-            "sourceID": 95.0},
+            "sourceID": 95.0
+        },
         {
             "linkID": 96.0,
             "itemID": 95.0,
-            "sourceID": 96.0},
+            "sourceID": 96.0
+        },
         {
             "linkID": 97.0,
             "itemID": 96.0,
-            "sourceID": 97.0},
+            "sourceID": 97.0
+        },
         {
             "linkID": 98.0,
             "itemID": 96.0,
-            "sourceID": 98.0},
+            "sourceID": 98.0
+        },
         {
             "linkID": 99.0,
             "itemID": 99.0,
-            "sourceID": 99.0},
+            "sourceID": 99.0
+        },
         {
             "linkID": 100.0,
             "itemID": 100.0,
-            "sourceID": 100.0},
+            "sourceID": 100.0
+        },
         {
             "linkID": 101.0,
             "itemID": 103.0,
-            "sourceID": 101.0},
+            "sourceID": 101.0
+        },
         {
             "linkID": 102.0,
             "itemID": 104.0,
-            "sourceID": 102.0},
+            "sourceID": 102.0
+        },
         {
             "linkID": 103.0,
             "itemID": 105.0,
-            "sourceID": 103.0},
+            "sourceID": 103.0
+        },
         {
             "linkID": 104.0,
             "itemID": 106.0,
-            "sourceID": 104.0},
+            "sourceID": 104.0
+        },
         {
             "linkID": 105.0,
             "itemID": 6.0,
-            "sourceID": 3.0},
+            "sourceID": 3.0
+        },
         {
             "linkID": 106.0,
             "itemID": 29.0,
-            "sourceID": 105.0},
+            "sourceID": 105.0
+        },
         {
             "linkID": 107.0,
             "itemID": 108.0,
-            "sourceID": 106.0}
+            "sourceID": 106.0
+        }
     ],
     "javaCDFSources": [
         {
@@ -2374,168 +2748,196 @@
             "?outcomeCount?": 4.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 11.0,
             "?outcomeCount?": 5.0,
             "?distribution?": "[[2, 3, 4, 5]]",
             "Enchantment": null,
-            "adminNotes": "array/list"},
+            "adminNotes": "array/list"
+        },
         {
             "sourceID": 26.0,
             "?outcomeCount?": 2.0,
             "?distribution?": "[[1, 2], [0.5, 0.5]]",
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 31.0,
             "?outcomeCount?": 3.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 33.0,
             "?outcomeCount?": 3.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 35.0,
             "?outcomeCount?": 1.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 36.0,
             "?outcomeCount?": 1.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 38.0,
             "?outcomeCount?": 5.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 39.0,
             "?outcomeCount?": 4.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 45.0,
             "?outcomeCount?": 3.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 47.0,
             "?outcomeCount?": 3.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 49.0,
             "?outcomeCount?": 6.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 56.0,
             "?outcomeCount?": 1.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 67.0,
             "?outcomeCount?": 2.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 72.0,
             "?outcomeCount?": 3.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 73.0,
             "?outcomeCount?": 1.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 74.0,
             "?outcomeCount?": 4.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 75.0,
             "?outcomeCount?": 1.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 76.0,
             "?outcomeCount?": 2.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 77.0,
             "?outcomeCount?": 3.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 78.0,
             "?outcomeCount?": 3.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 79.0,
             "?outcomeCount?": 1.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 82.0,
             "?outcomeCount?": 3.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 94.0,
             "?outcomeCount?": 4.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 97.0,
             "?outcomeCount?": 2.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 98.0,
             "?outcomeCount?": 2.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 102.0,
             "?outcomeCount?": 3.0,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null},
+            "adminNotes": null
+        },
         {
             "sourceID": 106.0,
             "?outcomeCount?": null,
             "?distribution?": null,
             "Enchantment": null,
-            "adminNotes": null}
+            "adminNotes": null
+        }
     ]
 }

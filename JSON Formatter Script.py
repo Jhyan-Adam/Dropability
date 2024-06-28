@@ -1,4 +1,4 @@
-#author: originally ChatGPT [AI], with edits from Dropanility developers
+#author: originally ChatGPT [AI], with edits from Dropability developers
 #NEEDS REFINING
 
 import openpyxl

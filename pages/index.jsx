@@ -10,6 +10,11 @@ export default function HomePage() {
   function LandingPage() {
     return (
       <>
+        <script async
+          data-adbreak-test="on"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3430353182515812"
+          crossorigin="anonymous">
+        </script>
         <Paper
           sx={(theme) => ({
             height: "100vh",
@@ -20,8 +25,22 @@ export default function HomePage() {
             padding: 0,
           })}>
           <TitleFrame />
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3430353182515812"
-            crossorigin="anonymous"></script>
+
+          {/*
+          <ins class="adsbygoogle"
+            style={{
+              display: "inline-block",
+              width: "336px",
+              height: "280px"
+            }}
+            data-ad-client="ca-pub-3430353182515812"
+            data-adtest="on"
+            data-ad-slot="3430353182515812"></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({ });
+          </script>
+          */}
+
           <div
             style={{
               display: "flex",

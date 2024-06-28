@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHover } from '@mantine/hooks';
 import TitleFrame from "../components/TitleFrame";
 import { Card, CardSection, Paper, ScrollArea, Slider, Text } from '@mantine/core';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from 'chart.js'
@@ -7,48 +8,58 @@ import { Line } from 'react-chartjs-2';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement)
 
 
-function generateData(n = 1000, p = 0.01) {
-    const data = [];
-    for (let index = 0; index < n; index++) {
-        data.push(1 - ((1 - p) ** index));
+function generateFunctionOutputData(inputNumber = 1000, pValue = 0.01) {
+    const functionOutput = [];
+    for (let index = 0; index < inputNumber; index++) {
+        functionOutput.push(1 - ((1 - pValue) ** index));
     }
 
-    return data;
+    return functionOutput;
 };
 
-function generateHorizontalLineData(numberFromSlider = 240, pValue = 0.01) {
-    //const N = Math.round((Math.log(1-p))/(Math.log(1-0.01)));
-    const P = (1 - ((1 - pValue) ** numberFromSlider));
+function generateHorizontalLineData(pValueFromSlider, [numberFromSlider, setNumberSlider], [probabilityFromSlider, setProbabilitySlider], probabilitySliderIsHovered = false) {
+    const n = numberFromSlider;
+    const p = probabilityFromSlider;
+    //Capital variables are derived from lowercase variables, which come from the sliders
+    const N = Math.round(Math.log(0.0001 + 1 - p) / Math.log(1 - pValueFromSlider));
+    const P = (1 - ((1 - pValueFromSlider) ** n));
 
-    //const lineData = Array(n).fill(1 - ((1 - 0.01) ** n));
-    //const lineData = Array( Math.round((Math.log(1-p))/(Math.log(1-0.01))) ).fill(p);
-    const lineData = Array(numberFromSlider+1).fill(P);
+    let lineData = []
+
+    //I still need to make the sliders be functions of each other somehow. Currently as soon as the second slider is not hovered, the probabilitySlider prop (?) resets to whatever
+    //Currently it might be possible if I don't just have a general "else" and instead say else if the number slider is hovered 
+    //But that seems clunky especially because of the redundant variable declaration in each case below and also because useHover is not exactly what I wanted (need something like isHeld)
+    //UPDATE: Sliders work now because of line "onChangeEnd"
+    if (probabilitySliderIsHovered) {
+        lineData = Array(N + 1).fill(p);
+    } else {
+        lineData = Array(n + 1).fill(P);
+    }
 
     return lineData;
 }
 
-export default function generalChartPage() {
-    const [numberSlider, setNumberSlider] = useState(240);
-    const [pValueSlider, setProbabilitySlider] = useState(0.01);
-    //const [chartMax, setChartMax] = useState(1000);
-    //const probability = (1 - ((1 - 0.01) ** number));
-    const chartMax = Math.round(Math.log(0.0001 + 1 - 0.999) / Math.log((1 - pValueSlider)));
+function generateChart(
+    [pValueSlider, setpValueSlider],
+    [numberSlider, setNumberSlider],
+    [probabilitySlider, setProbabilitySlider],
+    { probabilitySliderIsHovered, probabilitySliderHoverRef },
+    axisLimX) {
 
     const chartData = {
-        labels: Array.from(Array(chartMax).keys()),
+        labels: Array.from(Array(axisLimX).keys()),
         datasets: [
             {
-                label: 'TEST GRAPH',
-                //THIS IS WHERE YOU WILL IMPORT ITEM'S CUSTOM DATA (USING THE URL STRING AS REFERENCE?)
-                data: generateData(chartMax, pValueSlider),
+                label: 'GENERAL GRAPH',
+                data: generateFunctionOutputData(axisLimX, pValueSlider),
                 fill: false,
                 borderColor: '#4BC0C0',
                 pointRadius: "0",
                 tension: "0.1"
             },
             {
-                label: 'TEST LINE',
-                data: generateHorizontalLineData(numberSlider, pValueSlider),
+                label: 'TRIAL COUNT LINE',
+                data: generateHorizontalLineData(pValueSlider, [numberSlider, setNumberSlider], [probabilitySlider, setProbabilitySlider], probabilitySliderIsHovered),
                 fill: false,
                 borderColor: '#4BC0C0',
                 pointRadius: "0",
@@ -110,16 +121,16 @@ export default function generalChartPage() {
                             height={"300%"}
                             options={{
                                 animation: false,
-                                plugins: {decimation: {
-                                    enabled: true, 
-                                    algorithm: 'lttb', 
-                                    samples: 2
+                                plugins: {
+                                    decimation: {
+                                        enabled: true,
+                                        algorithm: 'lttb',
+                                        samples: 2
+                                    }
                                 }
-                            }
                             }}
                         />
                         <Slider
-                            //SLIDER CAN BE CONFIGURES WITH PROPS/STATES TO INTERACT WITH EACH OTHER SO 2 SLIDERS ARE VIABLE (FOR CHANCE AND TRIALS)
                             styles={(theme) => ({
                                 thumb: {
                                     height: 16,
@@ -131,8 +142,10 @@ export default function generalChartPage() {
                             })}
                             value={numberSlider}
                             onChange={setNumberSlider}
+                            onChangeEnd={(val) => setProbabilitySlider(1 - ((1 - pValueSlider) ** val))} //THIS LINE FIXES TEMPORARY HOVER PROBLEM
                             min={0}
-                            max={chartMax}
+                            max={axisLimX}
+                            disabled={false}
                         />
                         <Slider
                             styles={(theme) => ({
@@ -144,13 +157,15 @@ export default function generalChartPage() {
                                     boxShadow: theme.shadows.sm,
                                 },
                             })}
-                            value={pValueSlider}
+                            value={probabilitySlider}
                             onChange={setProbabilitySlider}
+                            onChangeEnd={(val) => setNumberSlider(Math.round(Math.log(0.0001 + 1 - val) / Math.log(1 - pValueSlider)))} //THIS LINE FIXES TEMPORARY HOVER PROBLEM
                             min={0}
                             max={1}
-                            precision={2}
-                            step={0.01}
-                            disabled={true}
+                            precision={3}
+                            step={0.001}
+                            ref={probabilitySliderHoverRef}
+                            disabled={false}
                         />
                         <Slider
                             styles={(theme) => ({
@@ -163,15 +178,33 @@ export default function generalChartPage() {
                                 },
                             })}
                             value={pValueSlider}
-                            onChange={setProbabilitySlider}
+                            onChange={setpValueSlider}
                             min={0.001}
                             max={1}
                             precision={6}
                             step={0.000001}
+                            disabled={false}
                         />
                     </Card>
                 </div>
             </ScrollArea>
         </Paper>
+    )
+}
+
+export default function generalChartPage() {
+    const [numberSlider, setNumberSlider] = useState(240);
+    const [pValueSlider, setpValueSlider] = useState(0.01);
+    const [probabilitySlider, setProbabilitySlider] = useState(0.9);
+    const { hovered: probabilitySliderIsHovered, ref: probabilitySliderHoverRef } = useHover();
+    const axisLimX = Math.round(Math.log(0.0001 + 1 - 0.999) / Math.log((1 - pValueSlider)));
+
+    return (
+        generateChart(
+            [pValueSlider, setpValueSlider],
+            [numberSlider, setNumberSlider],
+            [probabilitySlider, setProbabilitySlider],
+            { probabilitySliderIsHovered, probabilitySliderHoverRef },
+            axisLimX)
     )
 }

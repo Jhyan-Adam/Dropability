@@ -1,5 +1,9 @@
-import { useState } from 'react';
+//GENERAL COMMENTS:
+//I might have to restructure everything to be more modular by using separate functional components instead of generating everything directly with the default function 
+
+import { useState, useEffect } from 'react';
 import { Card, Paper, Image, Text, ScrollArea, Slider, CardSection, } from '@mantine/core';
+import { useHover } from '@mantine/hooks';
 import TitleFrame from "../components/TitleFrame";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler, Animation } from 'chart.js'
 import { Line } from 'react-chartjs-2';
@@ -8,7 +12,6 @@ import fsPromises from 'fs/promises';
 import path from 'path'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement)
-
 
 export async function getStaticProps() {
     const filePath = path.join(process.cwd(), 'minecraftData.json');
@@ -21,6 +24,7 @@ export async function getStaticProps() {
 }
 
 
+//maybe rename to say fetch instead of get because it is not accessing information from a code object but a database file
 function getItemData(props, itemIDfromURL) {
     const itemsTable = props.items;
     //let itemName, itemDescription;
@@ -33,6 +37,7 @@ function getItemData(props, itemIDfromURL) {
 }
 
 
+//maybe rename to say fetch instead of get because it is not accessing information from a code object but a database file
 function getSourceData(props, itemIDfromURL) {
     const itemsTable = props.items;
     const bridgeTable = props.javaItemSourceLink;
@@ -76,41 +81,162 @@ function generateFunctionOutputData(inputNumber = 1000, pValue = 0.01) {
 };
 
 
-function generateHorizontalLineData(number = 240, pValue = 0.01, numberFromSlider = 240, probabilityFromSlider = 0.9) {
-    const N = Math.round(Math.log(0.0001 + 1 - probabilityFromSlider) / Math.log((1 - pValue)));
-    const P = (1 - ((1 - pValue) ** numberFromSlider));
+function generateHorizontalLineData(pValue, numberFromSlider, probabilityFromSlider, probabilitySliderIsHovered = false) {
+    const n = numberFromSlider;
+    const p = probabilityFromSlider;
+    //Capital variables are derived from lowercase variables, which come from the sliders
+    const N = Math.round(Math.log(0.0001 + 1 - p) / Math.log(1 - pValue));
+    const P = (1 - ((1 - pValue) ** n));
 
-    //Swap cases to swap which slider works:
-    const lineData = Array(numberFromSlider + 1).fill(P);
+    let lineData = []
+
+    //I still need to make the sliders be functions of each other somehow. Currently as soon as the second slider is not hovered, the probabilitySlider prop (?) resets to whatever
+    //Currently it might be possible if I don't just have a general "else" and instead say else if the number slider is hovered 
+    //But that seems clunky especially because of the redundant variable declaration in each case below and also because useHover is not exactly what I wanted (need something like isHeld)
+    //UPDATE: Sliders seem to work now...
+    if (probabilitySliderIsHovered) {
+        lineData = Array(N + 1).fill(p);
+    } else {
+        lineData = Array(n + 1).fill(P);
+    }
 
     return lineData;
 }
 
 
-function generateChartData(inputNumber = 1000, pValue = 0.01, numberFromSlider = 240, probabilityFromSlider = 0.9) {
+function generateChartData(axisLimX = 1000, pValue = 0.01, [numberFromSlider, setNumberSlider], [probabilityFromSlider, setProbabilitySlider], probabilitySliderIsHovered) {
     const chartData = {
-        labels: Array.from(Array(inputNumber).keys()), //optimal?
+        labels: Array.from(Array(axisLimX).keys()), //optimal?
         datasets: [
             {
-                label: 'TEST GRAPH',
-                data: generateFunctionOutputData(inputNumber, pValue),
+                label: 'GEOMETRIC GRAPH',
+                data: generateFunctionOutputData(axisLimX, pValue),
                 fill: false,
                 borderColor: '#4BC0C0',
                 pointRadius: "0",
                 tension: "0.1"
             },
+            //This needs to have some sort of readout of the probability value - axis labels are insufficient for accuracy
+            //Also when using the probability slider this does not always align to the curve because the x-coordinate snaps to the closest value. 
+            //Maybe use a floor or ceiling function? I'm not entirely sure how to fix this yet...
             {
-                label: 'TEST LINE Y',
-                data: generateHorizontalLineData(inputNumber, pValue, numberFromSlider, probabilityFromSlider),
+                label: 'TRIAL COUNT LINE',
+                data: generateHorizontalLineData(pValue, numberFromSlider, probabilityFromSlider, probabilitySliderIsHovered),
                 fill: false,
                 borderColor: '#4BC0C0',
                 pointRadius: "0",
             },
-            //NEED VERTICAL LINE CORRESPONDENT HERE
+            //NEED VERTICAL LINE CORRESPONDENT HERE; also needs a similar readout for N(trials)
         ],
     };
 
     return chartData;
+}
+
+
+function generateChart(
+    sourceName,
+    sourceText,
+    pValue,
+    [numberSlider, setNumberSlider],
+    [probabilitySlider, setProbabilitySlider],
+    { probabilitySliderIsHovered, probabilitySliderHoverRef },
+    axisLimX) {
+
+    return <Card
+        sx={{
+            width: "fit-content",
+            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        }}>
+        <CardSection sx={{ paddingInlineStart: "6%" }}>
+            <Text
+                sx={{//make function of theme -> ??? I forgot what I meant here
+                    fontSize: "200%",
+                    color: "cornflowerblue",
+                    fontStyle: "normal",
+                    letterSpacing: "0.15em",
+                    fontWeight: "700",
+                    textAlign: "start",
+                    padding: "18px",
+                }}>
+                {sourceName}
+            </Text>
+        </CardSection>
+        <Line
+            //THIS IS WHERE YOU WILL IMPORT ITEM'S CUSTOM DATA - perhaps make n a function of p to avoid overly large data? <----- DONE
+            //I need to prevent this graph from rendering at nonstandard sizes for different data
+            data={generateChartData(axisLimX, pValue, [numberSlider, setNumberSlider], [probabilitySlider, setProbabilitySlider], probabilitySliderIsHovered)}
+            width={"400%"}
+            height={"300%"}
+            options={{
+                animation: false,
+                plugins: {
+                    decimation: {
+                        enabled: true,
+                        algorithm: 'lttb',
+                        samples: 10
+                    }
+                }
+            }}
+        />
+        <CardSection>
+            <Text
+                sx={{//make function of theme
+                    maxWidth: "800px",
+                    fontSize: "120%",
+                    color: "gray",
+                    fontStyle: "normal",
+                    letterSpacing: "0.15em",
+                    fontWeight: "700",
+                    textAlign: "start",
+                    padding: "18px",
+                }}>
+                {sourceText}
+            </Text>
+        </CardSection>
+        <div>
+            <Slider
+                styles={(theme) => ({
+                    thumb: {
+                        height: 16,
+                        width: 16,
+                        backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
+                        borderWidth: 1,
+                        boxShadow: theme.shadows.sm,
+                    },
+                })}
+                value={numberSlider}
+                onChange={setNumberSlider}
+                onChangeEnd={(val) => setProbabilitySlider(1 - ((1 - pValue) ** val))}
+                min={1}
+                max={axisLimX}
+                precision={0}
+                step={Math.ceil(axisLimX / 1000)}
+                disabled={false}
+            />
+            <Slider
+                styles={(theme) => ({
+                    thumb: {
+                        height: 16,
+                        width: 16,
+                        backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
+                        borderWidth: 1,
+                        boxShadow: theme.shadows.sm,
+                    },
+                })}
+                value={probabilitySlider}
+                onChange={setProbabilitySlider}
+                onChangeEnd={(val) => setNumberSlider(Math.round(Math.log(0.0001 + 1 - val) / Math.log(1 - pValue)))}
+                min={0}
+                max={1}
+                precision={3}
+                step={0.001}
+                ref={probabilitySliderHoverRef}
+                disabled={false}
+            />
+        </div>
+
+    </Card >
 }
 
 
@@ -119,110 +245,33 @@ export default function statisticsPage(props) {
     const itemIDfromURL = router.query["item"];
     const itemData = getItemData(props, itemIDfromURL)
     const sourceArray = getSourceData(props, itemIDfromURL);
-    const [numberSlider, setNumberSlider] = useState(0);
+    const [numberSlider, setNumberSlider] = useState(1);
     const [probabilitySlider, setProbabilitySlider] = useState(0.9);
-    //const probability = (1 - ((1 - 0.01) ** number));
+    const { hovered: probabilitySliderIsHovered, ref: probabilitySliderHoverRef } = useHover();
 
     let cardArr = [];
 
+    //useHover implementation not Perfectly implemented - see if it can be polished or replaced
     for (let source in sourceArray) {
         const sourceName = sourceArray[source].source.sourceName;
         const sourceText = sourceArray[source].source.sourceText;
         const pValue = eval(sourceArray[source].binomialData.pValue);
-        const nValue = Math.round(Math.log(0.0001 + 1 - 0.999) / Math.log((1 - pValue)));
+        const axisLimX = Math.ceil(Math.log(0.0001 + 1 - 0.999) / Math.log((1 - pValue)));
 
         cardArr.push(
-            <Card
-                sx={{
-                    maxWidth: "450px",
-                    width: "fit-content",
-                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                }}>
-                <CardSection sx={{ paddingInlineStart: "6%" }}>
-                    <Text
-                        sx={{//make function of theme
-                            fontSize: "200%",
-                            color: "cornflowerblue",
-                            fontStyle: "normal",
-                            letterSpacing: "0.15em",
-                            fontWeight: "700",
-                            textAlign: "start",
-                            padding: "18px",
-                        }}>
-                        {sourceName}
-                    </Text>
-                </CardSection>
-                <Line
-                    //THIS IS WHERE YOU WILL IMPORT ITEM'S CUSTOM DATA - perhaps make n a function of p to avoid overly large data?
-                    data={generateChartData(nValue, pValue, numberSlider, probabilitySlider)}
-                    width={"400%"}
-                    height={"300%"}
-                    options={{
-                        animation: false,
-                        plugins: {
-                            decimation: {
-                                enabled: true,
-                                algorithm: 'lttb',
-                                samples: 10
-                            }
-                        }
-                    }}
-                />
-                <CardSection>
-                    <Text
-                        sx={{//make function of theme
-                            fontSize: "120%",
-                            color: "gray",
-                            fontStyle: "normal",
-                            letterSpacing: "0.15em",
-                            fontWeight: "700",
-                            textAlign: "start",
-                            padding: "18px",
-                        }}>
-                        {sourceText}
-                    </Text>
-                </CardSection>
-                <div>
-                    <Slider
-                        //SLIDER CAN BE CONFIGURED WITH PROPS/STATES TO INTERACT WITH EACH OTHER SO 2 SLIDERS ARE VIABLE (FOR CHANCE AND TRIALS)
-                        styles={(theme) => ({
-                            thumb: {
-                                height: 16,
-                                width: 16,
-                                backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
-                                borderWidth: 1,
-                                boxShadow: theme.shadows.sm,
-                            },
-                        })}
-                        value={numberSlider}
-                        onChange={setNumberSlider}
-                        min={1}
-                        max={nValue}
-                    />
-                    <Slider
-                        styles={(theme) => ({
-                            thumb: {
-                                height: 16,
-                                width: 16,
-                                backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
-                                borderWidth: 1,
-                                boxShadow: theme.shadows.sm,
-                            },
-                        })}
-                        value={probabilitySlider}
-                        onChange={setProbabilitySlider}
-                        min={0}
-                        max={1}
-                        precision={2}
-                        step={0.01}
-                        disabled={true}
-                    />
-                </div>
-
-            </Card >
+            generateChart(
+                sourceName,
+                sourceText,
+                pValue,
+                [numberSlider, setNumberSlider],
+                [probabilitySlider, setProbabilitySlider],
+                { probabilitySliderIsHovered, probabilitySliderHoverRef },
+                axisLimX)
         )
     }
     return (
+        //Maybe add a new element indicating item drop type (Binomial or CDF)
+        //Maybe 
         <>
             <Paper
                 sx={(theme) => ({
@@ -303,6 +352,7 @@ export default function statisticsPage(props) {
                     </div>
                     <div
                         style={{
+                            maxWidth: "99%",
                             height: "fit-content",
                             width: "fit-content",
                             display: "flex",
