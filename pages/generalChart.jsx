@@ -21,7 +21,7 @@ function generateHorizontalLineData(pValueFromSlider, [numberFromSlider, setNumb
     const n = numberFromSlider;
     const p = probabilityFromSlider;
     //Capital variables are derived from lowercase variables, which come from the sliders
-    const N = Math.round(Math.log(0.0001 + 1 - p) / Math.log(1 - pValueFromSlider));
+    const N = Math.round(Math.log(1 - Math.min(p, 0.9999)) / Math.log(1 - pValueFromSlider));
     const P = (1 - ((1 - pValueFromSlider) ** n));
 
     let lineData = []
@@ -125,7 +125,7 @@ function generateChart(
                                     decimation: {
                                         enabled: true,
                                         algorithm: 'lttb',
-                                        samples: 2
+                                        //samples: 10
                                     }
                                 }
                             }}
@@ -159,7 +159,7 @@ function generateChart(
                             })}
                             value={probabilitySlider}
                             onChange={setProbabilitySlider}
-                            onChangeEnd={(val) => setNumberSlider(Math.round(Math.log(0.0001 + 1 - val) / Math.log(1 - pValueSlider)))} //THIS LINE FIXES TEMPORARY HOVER PROBLEM
+                            onChangeEnd={(val) => setNumberSlider(Math.round(Math.log(1 - Math.min(val, 0.9999)) / Math.log(1 - pValueSlider)))} //THIS LINE FIXES TEMPORARY HOVER PROBLEM
                             min={0}
                             max={1}
                             precision={3}
@@ -197,7 +197,7 @@ export default function generalChartPage() {
     const [pValueSlider, setpValueSlider] = useState(0.01);
     const [probabilitySlider, setProbabilitySlider] = useState(0.9);
     const { hovered: probabilitySliderIsHovered, ref: probabilitySliderHoverRef } = useHover();
-    const axisLimX = Math.round(Math.log(0.0001 + 1 - 0.999) / Math.log((1 - pValueSlider)));
+    const axisLimX = Math.round(Math.log(1 - 0.999) / Math.log((1 - pValueSlider)));
 
     return (
         generateChart(

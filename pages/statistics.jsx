@@ -85,7 +85,7 @@ function generateHorizontalLineData(pValue, numberFromSlider, probabilityFromSli
     const n = numberFromSlider;
     const p = probabilityFromSlider;
     //Capital variables are derived from lowercase variables, which come from the sliders
-    const N = Math.round(Math.log(0.0001 + 1 - p) / Math.log(1 - pValue));
+    const N = Math.round(Math.log(1 - Math.min(p, 0.9999)) / Math.log(1 - pValue));
     const P = (1 - ((1 - pValue) ** n));
 
     let lineData = []
@@ -93,7 +93,7 @@ function generateHorizontalLineData(pValue, numberFromSlider, probabilityFromSli
     //I still need to make the sliders be functions of each other somehow. Currently as soon as the second slider is not hovered, the probabilitySlider prop (?) resets to whatever
     //Currently it might be possible if I don't just have a general "else" and instead say else if the number slider is hovered 
     //But that seems clunky especially because of the redundant variable declaration in each case below and also because useHover is not exactly what I wanted (need something like isHeld)
-    //UPDATE: Sliders seem to work now...
+    //UPDATE: Sliders work well enough after onChangeEnd but still don't update if not hovered
     if (probabilitySliderIsHovered) {
         lineData = Array(N + 1).fill(p);
     } else {
@@ -111,9 +111,6 @@ function generateChartData(axisLimX = 1000, pValue = 0.01, [numberFromSlider, se
             {
                 label: 'GEOMETRIC GRAPH',
                 data: generateFunctionOutputData(axisLimX, pValue),
-                fill: false,
-                borderColor: '#4BC0C0',
-                pointRadius: "0",
                 tension: "0.1"
             },
             //This needs to have some sort of readout of the probability value - axis labels are insufficient for accuracy
@@ -121,10 +118,7 @@ function generateChartData(axisLimX = 1000, pValue = 0.01, [numberFromSlider, se
             //Maybe use a floor or ceiling function? I'm not entirely sure how to fix this yet...
             {
                 label: 'TRIAL COUNT LINE',
-                data: generateHorizontalLineData(pValue, numberFromSlider, probabilityFromSlider, probabilitySliderIsHovered),
-                fill: false,
-                borderColor: '#4BC0C0',
-                pointRadius: "0",
+                data: generateHorizontalLineData(pValue, numberFromSlider, probabilityFromSlider, probabilitySliderIsHovered)
             },
             //NEED VERTICAL LINE CORRESPONDENT HERE; also needs a similar readout for N(trials)
         ],
@@ -144,11 +138,10 @@ function generateChart(
     axisLimX) {
 
     return <Card
-        sx={{
-            width: "fit-content",
+        sx={{// Issues with this: inconsistent size and changes on refresh for some reason
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
         }}>
-        <CardSection sx={{ paddingInlineStart: "6%" }}>
+        <CardSection sx={{ paddingInlineStart: "4%" }}>
             <Text
                 sx={{//make function of theme -> ??? I forgot what I meant here
                     fontSize: "200%",
@@ -157,39 +150,41 @@ function generateChart(
                     letterSpacing: "0.15em",
                     fontWeight: "700",
                     textAlign: "start",
-                    padding: "18px",
+                    padding: "4%",
                 }}>
                 {sourceName}
             </Text>
         </CardSection>
         <Line
             //THIS IS WHERE YOU WILL IMPORT ITEM'S CUSTOM DATA - perhaps make n a function of p to avoid overly large data? <----- DONE
-            //I need to prevent this graph from rendering at nonstandard sizes for different data
+            //width and height parameters are inverted here for some reason
+            //height={"60vh"}
             data={generateChartData(axisLimX, pValue, [numberSlider, setNumberSlider], [probabilitySlider, setProbabilitySlider], probabilitySliderIsHovered)}
-            width={"400%"}
-            height={"300%"}
             options={{
                 animation: false,
                 plugins: {
                     decimation: {
                         enabled: true,
                         algorithm: 'lttb',
-                        samples: 10
+                        //samples: 10
                     }
-                }
+                },
+                fill: false,
+                borderColor: '#4BC0C0',
+                datasets: { line: { pointRadius: "0" } }
             }}
         />
-        <CardSection>
+        <CardSection sx={{maxWidth: "600px"}}>
             <Text
-                sx={{//make function of theme
-                    maxWidth: "800px",
+                sx={{
                     fontSize: "120%",
                     color: "gray",
                     fontStyle: "normal",
                     letterSpacing: "0.15em",
                     fontWeight: "700",
                     textAlign: "start",
-                    padding: "18px",
+                    padding: "2% 4% 3% 4%",
+                    wordWrap: "break-word",
                 }}>
                 {sourceText}
             </Text>
@@ -226,7 +221,7 @@ function generateChart(
                 })}
                 value={probabilitySlider}
                 onChange={setProbabilitySlider}
-                onChangeEnd={(val) => setNumberSlider(Math.round(Math.log(0.0001 + 1 - val) / Math.log(1 - pValue)))}
+                onChangeEnd={(val) => setNumberSlider(Math.round(Math.log(1 - Math.min(val, 0.9999)) / Math.log(1 - pValue)))}
                 min={0}
                 max={1}
                 precision={3}
@@ -256,7 +251,7 @@ export default function statisticsPage(props) {
         const sourceName = sourceArray[source].source.sourceName;
         const sourceText = sourceArray[source].source.sourceText;
         const pValue = eval(sourceArray[source].binomialData.pValue);
-        const axisLimX = Math.ceil(Math.log(0.0001 + 1 - 0.999) / Math.log((1 - pValue)));
+        const axisLimX = Math.ceil(Math.log(0.0001 + 1 - 0.99) / Math.log((1 - pValue)));
 
         cardArr.push(
             generateChart(
@@ -276,7 +271,7 @@ export default function statisticsPage(props) {
             <Paper
                 sx={(theme) => ({
                     height: "100vh",
-                    width: "100%",
+                    width: "100vw",
                     display: "flex",
                     flexFlow: "column",
                     backgroundColor: theme.colorScheme === "light" ? theme.colors.background : theme.colors.dark[7],
@@ -285,13 +280,13 @@ export default function statisticsPage(props) {
                 <TitleFrame />
                 <ScrollArea
                     sx={{
-                        //FIX THIS HEIGHT
-                        height: "100%",
-                        width: "100%",
+                        height: "100vh",
+                        width: "100vw",
                         display: "flex",
                         flexFlow: "wrap",
                         alignItems: "flex-start",
-                        padding: "0% 4% 0% 4%"
+                        padding: "0% 4% 0% 4%",
+                        //background: "black"
                     }}>
                     <div
                         style={{
@@ -299,74 +294,62 @@ export default function statisticsPage(props) {
                             width: "fit-content",
                             display: "flex",
                             flexFlow: "wrap",
-                            justifyContent: "center",
-                            padding: "1% 1% 1% 1%",
+                            justifyContent: "flex-start",
+                            padding: "4vmin 0% 30px 0%",
                             gap: "30px",
                             //background: "black"
                         }}>
-                        <div style={{
-                            width: "fit-content"
-                        }}>
-                            <Card
-                                sx={{
-                                    id: "itemNameCard",
-                                    height: "fit-content",
-                                    width: "fit-content",
-                                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                                }}>
-                                <Text size="itemTitle" weight={700} color="#4BC0C0">
-                                    {itemData[0]}
-                                </Text>
-                            </Card>
-                        </div>
-                        <div style={{
-                            width: "fit-content"
-                        }}>
-                            <Card
-                                sx={(theme) => ({
-                                    height: "fit-content",
-                                    width: "fit-content",
-                                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                                    background: theme.colors.button,
-                                    borderRadius: "32px"
-                                })}>
-                                <Image style={{ imageRendering: "pixelated" }} withPlaceholder src={`/minecraftItemIcons/${itemIDfromURL}.png`} alt={"trident"} height={96} />
-                            </Card>
-                        </div>
-                        <div style={{
-                            maxWidth: "320px",
-                            width: "fit-content"
-                        }}>
-                            <Card
-                                sx={(theme) => ({
-                                    id: "itemDescriptionCard",
-                                    height: "fit-content",
-                                    width: "fit-content",
-                                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                                })}>
-                                <Text size="lg" weight={700} color="gray">
-                                    {itemData[1]}
-                                </Text>
-                            </Card>
-                        </div>
+                        <Card
+                            sx={{
+                                id: "itemNameCard",
+                                height: "fit-content",
+                                width: "fit-content",
+                                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                            }}>
+                            <Text size="itemTitle" weight={700} color="#4BC0C0">
+                                {itemData[0]}
+                            </Text>
+                        </Card>
+                        <Card
+                            sx={(theme) => ({
+                                id: "itemImageCard",
+                                height: "fit-content",
+                                width: "fit-content",
+                                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                                background: theme.colors.button,
+                                borderRadius: "32%"
+                            })}>
+                            <Image style={{ imageRendering: "pixelated" }} withPlaceholder src={`/minecraftItemIcons/${itemIDfromURL}.png`} alt={itemIDfromURL} height={"9vmin"} />
+                        </Card>
+                        <Card
+                            sx={(theme) => ({
+                                id: "itemDescriptionCard",
+                                height: "fit-content",
+                                width: "fit-content",
+                                //maxWidth: "20vmax",
+                                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                            })}>
+                            <Text size="lg" weight={700} color="gray">
+                                {itemData[1]}
+                            </Text>
+                        </Card>
                     </div>
                     <div
                         style={{
-                            maxWidth: "99%",
                             height: "fit-content",
                             width: "fit-content",
                             display: "flex",
                             flexFlow: "wrap",
-                            justifyContent: "center",
-                            padding: "1% 1% 1% 1%",
-                            gap: "30px"
+                            justifyContent: "space-between",
+                            gap: "30px",
+                            //background: "black"
                         }}>
                         {cardArr}
                     </div>
 
                 </ScrollArea>
 
-            </Paper>
+            </Paper >
         </>
     );
 }

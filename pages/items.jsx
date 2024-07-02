@@ -5,7 +5,7 @@ import SearchBar from "../components/SearchBar";
 import fsPromises from 'fs/promises';
 import path from 'path'
 
-
+//This function calls data from the JSON file and assigns it to props
 export async function getStaticProps() {
     const filePath = path.join(process.cwd(), 'minecraftData.json');
     const jsonData = await fsPromises.readFile(filePath);
@@ -53,14 +53,15 @@ export default function ItemsPage(props) {
                             display: "flex",
                             flexFlow: "wrap",
                             justifyContent: "center",
-                            padding: "1% 1% 1% 1%",
-                            gap: "50px 50px",
+                            padding: "1%",
+                            gap: "6vmin 6vmin",
                             //backgroundColor: "black",
                         }}>
                         {
                             //buttonsArr}
+                            //NOTE: itemName in URL String does nothing as of yet
                             items?.map(item =>
-                                <Link href={"/statistics?item=" + item.gameID}>
+                                <Link href={"/statistics?item=" + item.gameID + "&" + item.itemName}> 
                                     <Button
                                         style={{
                                             width: "fit-content",
@@ -75,8 +76,8 @@ export default function ItemsPage(props) {
                                             style={{imageRendering: "pixelated"}}
                                             src={`/minecraftItemIcons/${item.gameID}.png`}
                                             alt={item.itemName}
-                                            width={64}
-                                            height={64}
+                                            width={"9vmin"}
+                                            height={"9vmin"}
                                             withPlaceholder
                                         />
                                     </Button>

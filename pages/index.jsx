@@ -52,26 +52,29 @@ export default function HomePage() {
             <Link href={"/items?game=minecraft"}>
               <Button
                 style={{
-                  width: "500px",
-                  //Fix sizing for mobile
+                  maxWidth: "600px",
+                  width: "fit-content",
                   height: "fit-content",
-                  padding: "2%",
+                  padding: "2% 3% 2% 3%",
                   background: "#1CE3CB",
                   borderRadius: "14px",
                   boxShadow: "0px 6px 14px rgba(0, 0, 0, 0.25)",
                 }}>
-                <Image src='/MinecraftTitle.png' alt="Minecraft" width={250} />
+                <Image src='/MinecraftTitle.png' alt="Minecraft"/>
               </Button>
             </Link>
             <Button
+            //Button width/height inconsistent because title pngs include transparent space when sizing
               style={{
-                width: "500px",
-                height: "100px",
+                maxWidth: "600px",
+                width: "fit-content",
+                height: "fit-content",
+                padding: "2% 3% 2% 3%",
                 background: "#1CE3CB",
                 borderRadius: "14px",
                 boxShadow: "0px 6px 14px rgba(0, 0, 0, 0.25)",
               }}>
-              <Text sx={(theme) => ({ fontSize: "60px", color: theme.colors.gray[6] })}>Button 2</Text>
+              <Image src='/EldenRingTitle.png' alt="Elden Ring"/>
             </Button>
           </div>
         </Paper>

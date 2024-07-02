@@ -3,10 +3,10 @@
         {
             "itemID": 1.0,
             "itemName": "Humanoid Hostile Mob Equipment",
-            "gameID": "[Multiple/null]",
+            "gameID": null,
             "itemDescription": "Any equipment (tools, weapons or armour) that a zombie, skeleton, [more?] spawned with ",
             "?sourceCount?": "1*",
-            "[completed?]": null,
+            "[completed?]": "?",
             "adminNotes": "ATTENTION REQUIRED also mention exceptions",
             "looting": 1.0,
             "fortune": null
@@ -136,7 +136,7 @@
             "itemID": 14.0,
             "itemName": "Bones",
             "gameID": "bone",
-            "itemDescription": "Item dropped by skeleton variants. Used chiefly for crafting bone meal and taming dogs.",
+            "itemDescription": "Item dropped by skeleton variants. Used chiefly for crafting bone meal and taming wolves.",
             "?sourceCount?": 1.0,
             "[completed?]": "T",
             "adminNotes": null,
@@ -227,9 +227,9 @@
             "itemDescription": null,
             "?sourceCount?": 1.0,
             "[completed?]": "F",
-            "adminNotes": null,
+            "adminNotes": "PDF",
             "looting": null,
-            "fortune": null
+            "fortune": 1.0
         },
         {
             "itemID": 29.0,
@@ -257,7 +257,7 @@
             "itemID": 32.0,
             "itemName": "Ender Pearl",
             "gameID": "ender_pearl",
-            "itemDescription": "Throwable item that teleports the player to its landing position, breaking on impact and impartting minor damage to the player.",
+            "itemDescription": "Throwable item that teleports the player to its landing position, breaking on impact and imparting minor damage to the player.",
             "?sourceCount?": 2.0,
             "[completed?]": "T",
             "adminNotes": null,
@@ -1022,7 +1022,7 @@
         },
         {
             "sourceID": 9.0,
-            "sourceName": "Sekelton Variants",
+            "sourceName": "Skeleton Variants",
             "sourceText": "The default skeleton or variants (wither skeleton, stray, and skeleton horse) drop 0-2 bones.",
             "sourceIndex": 1.0,
             "type": true,
