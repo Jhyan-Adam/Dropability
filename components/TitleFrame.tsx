@@ -123,7 +123,7 @@ function TitleFrame({ text }) {
               textAlign: "center",
               gridColumn: "2",
             }}>
-            {text ? text : "Dropability"}
+            Dropability
           </Text>
           <div
             style={{

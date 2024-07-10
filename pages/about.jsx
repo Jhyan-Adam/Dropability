@@ -57,7 +57,7 @@ export default function aboutPage() {
                                 What
                             </Text>
                         </CardSection>
-                        <Text size="lg" weight={700} color="#5E5E5E">
+                        <Text size="lg" weight={700} color="gray">
                             This website is a compendium of items from video games that have been implemented as random drops. 
                             The website is intended to make understanding your drop rates clear through interactive visualisation of these problems with the use of statistical modelling. 
                             If instead of blindly grinding, you want to know your chances of obtaining items, the data here will be useful to you.
@@ -89,7 +89,7 @@ export default function aboutPage() {
                                 Why
                             </Text>
                         </CardSection>
-                        <Text size="lg" weight={700} color="#5E5E5E">
+                        <Text size="lg" weight={700} color="gray">
                             Multiple reasons apply here. 
                             Firstly, I was extremely annoyed while trying to get a trident in Minecraft because all wikis just stated the basic drop-rate.<br/>
                             Most importantly, I am passionate about creating cool stuff, like a really dynamic and beautifully designed website.
@@ -121,7 +121,7 @@ export default function aboutPage() {
                                 Who
                             </Text>
                         </CardSection>
-                        <Text size="lg" weight={700} color="#5E5E5E">
+                        <Text size="lg" weight={700} color="gray">
                             I am a student, so I just started this as a project to broaden my skillset and put my knowledge to use, with the possibility of monetisation on the side.
                             While I am studying a field unrelated to web development, I want to go that much further and put in effort beyond just what is expected of me.
                             <br/><br/>

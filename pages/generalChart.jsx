@@ -1,21 +1,12 @@
 import { useState } from 'react';
 import { useHover } from '@mantine/hooks';
-import TitleFrame from "../components/TitleFrame";
 import { Card, CardSection, Paper, ScrollArea, Slider, Text } from '@mantine/core';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from 'chart.js'
-import { Line } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler, BarElement } from 'chart.js' //Title, Tooltip, Legend? Make use of these!
+import { Bar, Line } from 'react-chartjs-2';
+import TitleFrame from "../components/TitleFrame";
+import { generateCDFOutputData } from '../components/generateFunctionOutputData'; //Make more functions globally accessible like this
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement)
-
-
-function generateFunctionOutputData(inputNumber = 1000, pValue = 0.01) {
-    const functionOutput = [];
-    for (let index = 0; index < inputNumber; index++) {
-        functionOutput.push(1 - ((1 - pValue) ** index));
-    }
-
-    return functionOutput;
-};
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Filler, BarElement)
 
 function generateHorizontalLineData(pValueFromSlider, [numberFromSlider, setNumberSlider], [probabilityFromSlider, setProbabilitySlider], probabilitySliderIsHovered = false) {
     const n = numberFromSlider;
@@ -46,23 +37,34 @@ function generateChart(
     { probabilitySliderIsHovered, probabilitySliderHoverRef },
     axisLimX) {
 
-    const chartData = {
+    const lineChartData = {
         labels: Array.from(Array(axisLimX).keys()),
         datasets: [
             {
                 label: 'GENERAL GRAPH',
-                data: generateFunctionOutputData(axisLimX, pValueSlider),
-                fill: false,
-                borderColor: '#4BC0C0',
-                pointRadius: "0",
+                data: generateCDFOutputData(axisLimX, pValueSlider),
+                fill: "origin",
                 tension: "0.1"
             },
             {
                 label: 'TRIAL COUNT LINE',
                 data: generateHorizontalLineData(pValueSlider, [numberSlider, setNumberSlider], [probabilitySlider, setProbabilitySlider], probabilitySliderIsHovered),
-                fill: false,
-                borderColor: '#4BC0C0',
                 pointRadius: "0",
+            }
+        ]
+    };
+
+    const barChartData = {
+        labels: [1, 2, 3, 4, 5, 6, 7],
+        datasets: [
+            {
+                label: 'CDF',
+                data: [0.1216, 0.2702, 0.2852, 0.1901, 0.0898, 0.0319, 0.0197],
+                borderColor: "#4BC0C0",
+                backgroundColor: "#1CE3CB33",
+                borderWidth: 2,
+                barThickness: 10,
+                //barPercentage: 0.5
             }
         ]
     };
@@ -75,7 +77,6 @@ function generateChart(
                 display: "flex",
                 flexFlow: "column",
                 backgroundColor: theme.colorScheme === "light" ? theme.colors.background : theme.colors.dark[7],
-                padding: 0,
             })}>
             <TitleFrame />
             <ScrollArea
@@ -94,12 +95,14 @@ function generateChart(
                         justifyContent: "center",
                         padding: "1% 1% 1% 1%",
                         gap: "30px",
+                        //background: "black"
                     }}>
                     <Card
                         sx={{
                             height: "fit-content",
                             width: "fit-content",
                             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                            maxWidth: "500px"
                         }}>
                         <CardSection>
                             <Text
@@ -110,15 +113,27 @@ function generateChart(
                                     letterSpacing: "0.15em",
                                     fontWeight: "700",
                                     textAlign: "center",
-                                    padding: "18px",
+                                    padding: "18px 18px 0px 18px",
                                 }}>
                                 Model Your Own Item
                             </Text>
+                            <Text
+                                sx={{
+                                    fontSize: "110%",
+                                    color: "#4BC0C0",
+                                    fontStyle: "normal",
+                                    letterSpacing: "0.15em",
+                                    fontWeight: "700",
+                                    textAlign: "center",
+                                    paddingBottom: "14px"
+                                }}>
+                                Cumulative Distribution Function
+                            </Text>
                         </CardSection>
                         <Line
-                            data={chartData}
-                            width={"400%"}
-                            height={"300%"}
+                            data={lineChartData}
+                            //width={"400%"}
+                            //height={"300%"}
                             options={{
                                 animation: false,
                                 plugins: {
@@ -126,8 +141,15 @@ function generateChart(
                                         enabled: true,
                                         algorithm: 'lttb',
                                         //samples: 10
+                                    },
+                                    tooltip: {
+                                        
                                     }
-                                }
+                                },
+                                responsive: true,
+                                borderColor: '#4BC0C0',
+                                backgroundColor: "#1CE3CB22",
+                                pointRadius: "0"
                             }}
                         />
                         <Slider
@@ -158,7 +180,7 @@ function generateChart(
                                 },
                             })}
                             value={probabilitySlider}
-                            onChange={setProbabilitySlider}
+                            onChange={setProbabilitySlider} //Currently this is ugly and stays continuous for small values of axis limit (n)
                             onChangeEnd={(val) => setNumberSlider(Math.round(Math.log(1 - Math.min(val, 0.9999)) / Math.log(1 - pValueSlider)))} //THIS LINE FIXES TEMPORARY HOVER PROBLEM
                             min={0}
                             max={1}
@@ -184,6 +206,43 @@ function generateChart(
                             precision={6}
                             step={0.000001}
                             disabled={false}
+                        />
+                    </Card>
+
+                    <Card
+                        sx={{
+                            height: "fit-content",
+                            width: "fit-content",
+                            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                        }}>
+                        <CardSection>
+                            <Text
+                                sx={{
+                                    fontSize: "180%",
+                                    color: "cornflowerblue",
+                                    fontStyle: "normal",
+                                    letterSpacing: "0.15em",
+                                    fontWeight: "700",
+                                    textAlign: "center",
+                                    padding: "18px 18px 0px 18px",
+                                }}>
+                                Model Your Own Item
+                            </Text>
+                            <Text
+                                sx={{
+                                    fontSize: "110%",
+                                    color: "#4BC0C0",
+                                    fontStyle: "normal",
+                                    letterSpacing: "0.15em",
+                                    fontWeight: "700",
+                                    textAlign: "center",
+                                    paddingBottom: "14px"
+                                }}>
+                                Probability Mass Function
+                            </Text>
+                        </CardSection>
+                        <Bar
+                            data={barChartData}
                         />
                     </Card>
                 </div>

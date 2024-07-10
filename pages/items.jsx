@@ -6,6 +6,7 @@ import fsPromises from 'fs/promises';
 import path from 'path'
 
 //This function calls data from the JSON file and assigns it to props
+//Investigate server-side rendering here; bugfix for placeholder in Mantine 7.x
 export async function getStaticProps() {
     const filePath = path.join(process.cwd(), 'minecraftData.json');
     const jsonData = await fsPromises.readFile(filePath);
@@ -58,7 +59,6 @@ export default function ItemsPage(props) {
                             //backgroundColor: "black",
                         }}>
                         {
-                            //buttonsArr}
                             //NOTE: itemName in URL String does nothing as of yet
                             items?.map(item =>
                                 <Link href={"/statistics?item=" + item.gameID + "&" + item.itemName}> 

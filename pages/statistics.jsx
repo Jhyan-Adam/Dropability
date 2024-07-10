@@ -1,18 +1,20 @@
 //GENERAL COMMENTS:
 //I might have to restructure everything to be more modular by using separate functional components instead of generating everything directly with the default function 
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'; //useEffect?
 import { Card, Paper, Image, Text, ScrollArea, Slider, CardSection, } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
-import TitleFrame from "../components/TitleFrame";
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler, Animation } from 'chart.js'
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler, Animation, BarElement } from 'chart.js' //Unused stuff might be useful?
 import { Line } from 'react-chartjs-2';
 import { useRouter } from "next/router";
 import fsPromises from 'fs/promises';
 import path from 'path'
+import TitleFrame from "../components/TitleFrame"; 
+import { generateCDFOutputData } from '../components/generateFunctionOutputData'; //Make more functions globally accessible like this
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement)
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Filler, BarElement)
 
+//Investigate server-side rendering here; bugfix for placeholder in Mantine 7.x
 export async function getStaticProps() {
     const filePath = path.join(process.cwd(), 'minecraftData.json');
     const jsonData = await fsPromises.readFile(filePath);
@@ -24,8 +26,7 @@ export async function getStaticProps() {
 }
 
 
-//maybe rename to say fetch instead of get because it is not accessing information from a code object but a database file
-function getItemData(props, itemIDfromURL) {
+function fetchItemData(props, itemIDfromURL) {
     const itemsTable = props.items;
     //let itemName, itemDescription;
 
@@ -37,8 +38,7 @@ function getItemData(props, itemIDfromURL) {
 }
 
 
-//maybe rename to say fetch instead of get because it is not accessing information from a code object but a database file
-function getSourceData(props, itemIDfromURL) {
+function fetchSourceData(props, itemIDfromURL) {
     const itemsTable = props.items;
     const bridgeTable = props.javaItemSourceLink;
     const sourcesTable = props.sources;
@@ -71,14 +71,7 @@ function getSourceData(props, itemIDfromURL) {
 }
 
 
-function generateFunctionOutputData(inputNumber = 1000, pValue = 0.01) {
-    const functionOutput = [];
-    for (let index = 0; index < inputNumber; index++) {
-        functionOutput.push(1 - ((1 - pValue) ** index));
-    }
 
-    return functionOutput;
-};
 
 
 function generateHorizontalLineData(pValue, numberFromSlider, probabilityFromSlider, probabilitySliderIsHovered = false) {
@@ -110,7 +103,8 @@ function generateChartData(axisLimX = 1000, pValue = 0.01, [numberFromSlider, se
         datasets: [
             {
                 label: 'GEOMETRIC GRAPH',
-                data: generateFunctionOutputData(axisLimX, pValue),
+                data: generateCDFOutputData(axisLimX, pValue),
+                fill: "origin",
                 tension: "0.1"
             },
             //This needs to have some sort of readout of the probability value - axis labels are insufficient for accuracy
@@ -140,6 +134,8 @@ function generateChart(
     return <Card
         sx={{// Issues with this: inconsistent size and changes on refresh for some reason
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+            minWidth: "400px",
+            //height: "fit-content"
         }}>
         <CardSection sx={{ paddingInlineStart: "4%" }}>
             <Text
@@ -169,8 +165,9 @@ function generateChart(
                         //samples: 10
                     }
                 },
-                fill: false,
+                responsive: true, //not working: investigate
                 borderColor: '#4BC0C0',
+                backgroundColor: "#1CE3CB22",
                 datasets: { line: { pointRadius: "0" } }
             }}
         />
@@ -238,8 +235,8 @@ function generateChart(
 export default function statisticsPage(props) {
     const router = useRouter();
     const itemIDfromURL = router.query["item"];
-    const itemData = getItemData(props, itemIDfromURL)
-    const sourceArray = getSourceData(props, itemIDfromURL);
+    const itemData = fetchItemData(props, itemIDfromURL)
+    const sourceArray = fetchSourceData(props, itemIDfromURL);
     const [numberSlider, setNumberSlider] = useState(1);
     const [probabilitySlider, setProbabilitySlider] = useState(0.9);
     const { hovered: probabilitySliderIsHovered, ref: probabilitySliderHoverRef } = useHover();
@@ -326,7 +323,6 @@ export default function statisticsPage(props) {
                                 id: "itemDescriptionCard",
                                 height: "fit-content",
                                 width: "fit-content",
-                                //maxWidth: "20vmax",
                                 boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                             })}>
                             <Text size="lg" weight={700} color="gray">
@@ -340,6 +336,7 @@ export default function statisticsPage(props) {
                             width: "fit-content",
                             display: "flex",
                             flexFlow: "wrap",
+                            //justifyItems: "stretch",
                             justifyContent: "space-between",
                             gap: "30px",
                             //background: "black"
