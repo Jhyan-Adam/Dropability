@@ -3,7 +3,7 @@
         {
             "itemID": 1.0,
             "itemName": "Humanoid Hostile Mob Equipment",
-            "gameID": null,
+            "gameID": "equipment",
             "itemDescription": "Any equipment (tools, weapons or armour) that a zombie, skeleton, [more?] spawned with ",
             "?sourceCount?": "1*",
             "[completed?]": "?",
@@ -25,7 +25,7 @@
         {
             "itemID": 3.0,
             "itemName": "[Tool]",
-            "gameID": "[Multiple/null]",
+            "gameID": "tool",
             "itemDescription": null,
             "?sourceCount?": null,
             "[completed?]": "?",
@@ -35,9 +35,9 @@
         },
         {
             "itemID": 4.0,
-            "itemName": "Amethyst",
+            "itemName": "Amethyst Shard",
             "gameID": "amethyst_shard",
-            "itemDescription": null,
+            "itemDescription": "Amethyst is a crystal used for crafting and decoration.",
             "?sourceCount?": 1.0,
             "[completed?]": null,
             "adminNotes": "ABNORMAL",
@@ -80,7 +80,7 @@
         {
             "itemID": 8.0,
             "itemName": "Baby Chicken",
-            "gameID": null,
+            "gameID": "baby_chicken",
             "itemDescription": "Baby chicken spawned from a thrown egg entity.",
             "?sourceCount?": 1.0,
             "[completed?]": "T",
@@ -200,11 +200,11 @@
         },
         {
             "itemID": 26.0,
-            "itemName": "Copper Ingot",
-            "gameID": "copper_ingot\t",
-            "itemDescription": "Crafting item dropped by drowned.",
+            "itemName": "Copper Ingot", 
+            "gameID": "copper_ingot",
+            "itemDescription": "Copper ingots are used to craft various items",
             "?sourceCount?": 1.0,
-            "[completed?]": "F",
+            "[completed?]": "T",
             "adminNotes": null,
             "looting": 3.0,
             "fortune": null
@@ -223,8 +223,8 @@
         {
             "itemID": 28.0,
             "itemName": "Diamond",
-            "gameID": null,
-            "itemDescription": null,
+            "gameID": "diamond",
+            "itemDescription": "Diamonds are one of the most iconic items in Minecraft. They are used for crafting tools, armour, weapons, and more",
             "?sourceCount?": 1.0,
             "[completed?]": "F",
             "adminNotes": "PDF",
@@ -397,17 +397,6 @@
             "fortune": null
         },
         {
-            "itemID": 46.0,
-            "itemName": "Honeycomb",
-            "gameID": null,
-            "itemDescription": null,
-            "?sourceCount?": null,
-            "[completed?]": "X",
-            "adminNotes": "investigate",
-            "looting": null,
-            "fortune": null
-        },
-        {
             "itemID": 47.0,
             "itemName": "Ink Sac",
             "gameID": "ink_sac",
@@ -437,17 +426,6 @@
             "?sourceCount?": 1.0,
             "[completed?]": "T",
             "adminNotes": null,
-            "looting": null,
-            "fortune": null
-        },
-        {
-            "itemID": 50.0,
-            "itemName": "Kelp",
-            "gameID": null,
-            "itemDescription": null,
-            "?sourceCount?": null,
-            "[completed?]": "X",
-            "adminNotes": "investigate",
             "looting": null,
             "fortune": null
         },
@@ -536,17 +514,6 @@
             "?sourceCount?": 2.0,
             "[completed?]": "T",
             "adminNotes": null,
-            "looting": null,
-            "fortune": null
-        },
-        {
-            "itemID": 64.0,
-            "itemName": "Netherrite Scrap",
-            "gameID": null,
-            "itemDescription": null,
-            "?sourceCount?": null,
-            "[completed?]": "X",
-            "adminNotes": "investigate",
             "looting": null,
             "fortune": null
         },
@@ -927,7 +894,7 @@
         {
             "itemID": 107.0,
             "itemName": "Soul Speed Iron Boots",
-            "gameID": null,
+            "gameID": "soul_speed_iron_boots",
             "itemDescription": null,
             "?sourceCount?": null,
             "[completed?]": null,
@@ -1293,7 +1260,7 @@
         {
             "sourceID": 39.0,
             "sourceName": "Gilded Blackstone",
-            "sourceText": "Type of block found in bastions; drops 2-5 gold nuggets.",
+            "sourceText": "Type of block found in bastions; 10% chance to drop 2-5 gold nuggets with a uniform distribution, otherwise drops itself as a block.",
             "sourceIndex": 3.0,
             "type": false,
             "Enchantment": 4.0,
@@ -1887,7 +1854,7 @@
         {
             "sourceID": 105.0,
             "sourceName": "Emerald Ore",
-            "sourceText": "Emerald ore drops 1 emerald.",
+            "sourceText": "Emerald ore drops 1 emerald without fortune.",
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 3.0,
@@ -1900,6 +1867,24 @@
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 3.0,
+            "adminNotes": null
+        },
+        {
+            "sourceID": 107.0,
+            "sourceName": "Diamond Ore",
+            "sourceText": "Diamond ore drops 1 emerald without fortune.",
+            "sourceIndex": 1.0,
+            "type": false,
+            "Enchantment": 4.0,
+            "adminNotes": null
+        },
+        {
+            "sourceID": 108.0,
+            "sourceName": "Ametheyst Cluster",
+            "sourceText": "Amethyst clusters drop 4 amethyst shards without fortune.",
+            "sourceIndex": 1.0,
+            "type": false,
+            "Enchantment": 4.0,
             "adminNotes": null
         }
     ],
@@ -2740,202 +2725,214 @@
             "linkID": 107.0,
             "itemID": 108.0,
             "sourceID": 106.0
+        },
+        {
+            "linkID": 108.0,
+            "itemID": 28.0,
+            "sourceID": 107.0
+        },
+        {
+            "linkID": 109.0,
+            "itemID": 4.0,
+            "sourceID": 108.0
         }
     ],
     "javaCDFSources": [
         {
             "sourceID": 6.0,
-            "?outcomeCount?": 4.0,
-            "?distribution?": null,
+            "distribution": "[[2, 3, 4, 5], [0,0,0,0]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 11.0,
-            "?outcomeCount?": 5.0,
-            "?distribution?": "[[2, 3, 4, 5]]",
+            "distribution": "[[2, 3, 4, 5], [0,0,0,0]]",
             "Enchantment": null,
             "adminNotes": "array/list"
         },
         {
             "sourceID": 26.0,
-            "?outcomeCount?": 2.0,
-            "?distribution?": "[[1, 2], [0.5, 0.5]]",
+            "distribution": "[[1, 2], [0.5, 0.5]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 31.0,
-            "?outcomeCount?": 3.0,
-            "?distribution?": null,
+            "distribution": "[[1, 2, 3], [1/3, 1/3, 1/3]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 33.0,
-            "?outcomeCount?": 3.0,
-            "?distribution?": null,
+            "distribution": "[[2, 3, 4], [1/3, 1/3, 1/3]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 35.0,
-            "?outcomeCount?": 1.0,
-            "?distribution?": null,
+            "distribution": "[[1], [1]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 36.0,
-            "?outcomeCount?": 1.0,
-            "?distribution?": null,
+            "distribution": "[[1], [1]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 38.0,
-            "?outcomeCount?": 5.0,
-            "?distribution?": null,
+            "distribution": "[[2, 3, 4, 5, 6], [0.2, 0.2, 0.2, 0.2, 0.2]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 39.0,
-            "?outcomeCount?": 4.0,
-            "?distribution?": null,
+            "distribution": "[[0, 2, 3, 4, 5], [0.9, 0.025, 0.025, 0.025, 0.025]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 45.0,
-            "?outcomeCount?": 3.0,
-            "?distribution?": null,
+            "distribution": "[[1, 2, 3], [1/3, 1/3, 1/3]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 47.0,
-            "?outcomeCount?": 3.0,
-            "?distribution?": null,
+            "distribution": "[[3, 4, 5], [1/3, 1/3, 1/3]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 49.0,
-            "?outcomeCount?": 6.0,
-            "?distribution?": null,
+            "distribution": "[[4, 5, 6, 7, 8, 9], [1/6, 1/6, 1/6, 1/6, 1/6, 1/6]]",
+            "Enchantment": null,
+            "adminNotes": null
+        },
+        {
+            "sourceID": 53.0,
+            "distribution": "[[3, 4, 5, 6, 7], [0.2, 0.2, 0.2, 0.2, 0.2]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 56.0,
-            "?outcomeCount?": 1.0,
-            "?distribution?": null,
+            "distribution": "[[1], [1]]",
+            "Enchantment": null,
+            "adminNotes": null
+        },
+        {
+            "sourceID": 62.0,
+            "distribution": "[[1, 2, 3, 4], [0.25, 0.25, 0.25, 0.25]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 67.0,
-            "?outcomeCount?": 2.0,
-            "?distribution?": null,
+            "distribution": "[[2, 3], [0.5, 0.5]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 72.0,
-            "?outcomeCount?": 3.0,
-            "?distribution?": null,
+            "distribution": "[[1, 2, 3], [1/3, 1/3, 1/3]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 73.0,
-            "?outcomeCount?": 1.0,
-            "?distribution?": null,
+            "distribution": "[[1], [1]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 74.0,
-            "?outcomeCount?": 4.0,
-            "?distribution?": null,
+            "distribution": "[[2, 3, 4, 5], [0.25, 0.25, 0.25, 0.25]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 75.0,
-            "?outcomeCount?": 1.0,
-            "?distribution?": null,
+            "distribution": "[[1], [1]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 76.0,
-            "?outcomeCount?": 2.0,
-            "?distribution?": null,
+            "distribution": "[[1, 2], [0.5, 0.5]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 77.0,
-            "?outcomeCount?": 3.0,
-            "?distribution?": null,
+            "distribution": "[[1, 2, 3], [1/3, 1/3, 1/3]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 78.0,
-            "?outcomeCount?": 3.0,
-            "?distribution?": null,
+            "distribution": "[[2, 3, 4], [1/3, 1/3, 1/3]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 79.0,
-            "?outcomeCount?": 1.0,
-            "?distribution?": null,
+            "distribution": "[[1], [1]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 82.0,
-            "?outcomeCount?": 3.0,
-            "?distribution?": null,
+            "distribution": "[[1, 2, 3], [1/3, 1/3, 1/3]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 94.0,
-            "?outcomeCount?": 4.0,
-            "?distribution?": null,
+            "distribution": "[[2, 3, 4, 5], [0.25, 0.25, 0.25, 0.25]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 97.0,
-            "?outcomeCount?": 2.0,
-            "?distribution?": null,
+            "distribution": "[[2, 3], [0.5, 0.5]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 98.0,
-            "?outcomeCount?": 2.0,
-            "?distribution?": null,
+            "distribution": "[[1, 2], [0.5, 0.5]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 102.0,
-            "?outcomeCount?": 3.0,
-            "?distribution?": null,
+            "distribution": "[[1, 2, 3], [1/3, 1/3, 1/3]]",
+            "Enchantment": null,
+            "adminNotes": null
+        },
+        {
+            "sourceID": 105.0,
+            "distribution": "[[1], [1]]",
             "Enchantment": null,
             "adminNotes": null
         },
         {
             "sourceID": 106.0,
-            "?outcomeCount?": null,
-            "?distribution?": null,
+            "distribution": "[[4, 5], [0.5, 0.5]]",
+            "Enchantment": null,
+            "adminNotes": null
+        },
+        {
+            "sourceID": 107.0,
+            "distribution": "[[1], [1]]",
+            "Enchantment": null,
+            "adminNotes": null
+        },
+        {
+            "sourceID": 108.0,
+            "distribution": "[[4], [1]]",
             "Enchantment": null,
             "adminNotes": null
         }
