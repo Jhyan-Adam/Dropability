@@ -4,62 +4,41 @@ import { Card, CardSection, Paper, ScrollArea, Slider, Text } from '@mantine/cor
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler, BarElement } from 'chart.js' //Title, Tooltip, Legend? Make use of these!
 import { Bar, Line } from 'react-chartjs-2';
 import TitleFrame from "../components/TitleFrame";
-import { generateCDFOutputData } from '../components/generateFunctionOutputData'; //Make more functions globally accessible like this
+import { generateHorizontalLineData, generateBinomialOutputData } from '../algorithms/Graphing';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Filler, BarElement)
 
-function generateHorizontalLineData(pValueFromSlider, [numberFromSlider, setNumberSlider], [probabilityFromSlider, setProbabilitySlider], probabilitySliderIsHovered = false) {
-    const n = numberFromSlider;
-    const p = probabilityFromSlider;
-    //Capital variables are derived from lowercase variables, which come from the sliders
-    const N = Math.round(Math.log(1 - Math.min(p, 0.9999)) / Math.log(1 - pValueFromSlider));
-    const P = (1 - ((1 - pValueFromSlider) ** n));
-
-    let lineData = []
-
-    //I still need to make the sliders be functions of each other somehow. Currently as soon as the second slider is not hovered, the probabilitySlider prop (?) resets to whatever
-    //Currently it might be possible if I don't just have a general "else" and instead say else if the number slider is hovered 
-    //But that seems clunky especially because of the redundant variable declaration in each case below and also because useHover is not exactly what I wanted (need something like isHeld)
-    //UPDATE: Sliders work now because of line "onChangeEnd"
-    if (probabilitySliderIsHovered) {
-        lineData = Array(N + 1).fill(p);
-    } else {
-        lineData = Array(n + 1).fill(P);
-    }
-
-    return lineData;
-}
-
-function generateChart(
+function generateChart( //split up chart types into 2 functions for reusability standardisation
     [pValueSlider, setpValueSlider],
     [numberSlider, setNumberSlider],
     [probabilitySlider, setProbabilitySlider],
     { probabilitySliderIsHovered, probabilitySliderHoverRef },
     axisLimX) {
 
+    const pVectorTemporary = [[1, 2, 3, 4, 5, 6, 7], [0.1216, 0.2702, 0.2852, 0.1901, 0.0898, 0.0319, 0.0197]]
     const lineChartData = {
         labels: Array.from(Array(axisLimX).keys()),
         datasets: [
             {
                 label: 'GENERAL GRAPH',
-                data: generateCDFOutputData(axisLimX, pValueSlider),
+                data: generateBinomialOutputData(axisLimX, pValueSlider),
                 fill: "origin",
                 tension: "0.1"
             },
             {
                 label: 'TRIAL COUNT LINE',
-                data: generateHorizontalLineData(pValueSlider, [numberSlider, setNumberSlider], [probabilitySlider, setProbabilitySlider], probabilitySliderIsHovered),
+                data: generateHorizontalLineData(pValueSlider, numberSlider, probabilitySlider, probabilitySliderIsHovered),
                 pointRadius: "0",
             }
         ]
     };
 
     const barChartData = {
-        labels: [1, 2, 3, 4, 5, 6, 7],
+        labels: pVectorTemporary[0],
         datasets: [
             {
                 label: 'CDF',
-                data: [0.1216, 0.2702, 0.2852, 0.1901, 0.0898, 0.0319, 0.0197],
+                data: pVectorTemporary[1],
                 borderColor: "#4BC0C0",
                 backgroundColor: "#1CE3CB33",
                 borderWidth: 2,
