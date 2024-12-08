@@ -22,7 +22,6 @@ function TitleFrame({ text }) {
       >
         <div
           style={{
-            width: "100%",
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-end",
@@ -88,8 +87,8 @@ function TitleFrame({ text }) {
             </Button>
           </Link>
         </div>
-
       </Drawer>
+
       <Paper
         sx={(theme) => ({
           height: "fit-content",
@@ -98,7 +97,7 @@ function TitleFrame({ text }) {
           flexDirection: "row",
           alignItems: "center",
           backgroundColor: theme.colorScheme === "light" ? "#FFFFFF" : theme.colors.dark[6],
-          padding: 0,
+          padding: "2vh"
         })}>
         <div
           style={{
@@ -110,12 +109,11 @@ function TitleFrame({ text }) {
             display: "grid",
             gridTemplateColumns: "1fr 1fr 1fr",
             justifyContent: "center",
-            padding: "1%",
           }}>
           <ColorSchemeToggle />
           <Text
             sx={{
-              fontSize: "300%",
+              fontSize: "3vmax",
               color: "cornflowerblue",
               fontStyle: "normal",
               fontWeight: "200",
@@ -125,7 +123,7 @@ function TitleFrame({ text }) {
               textAlign: "center",
               gridColumn: "2",
             }}>
-            {text ? text : "Dropability"}
+            Dropability
           </Text>
           <div
             style={{
@@ -144,9 +142,8 @@ function TitleFrame({ text }) {
                   //Fix sizing for mobile
                   //minHeight: "95%",
                   //minWidth: "60px",
-                  height: "fit-content",
-                  width: "fit-content",
-                  padding: "4%",
+                  height: "8vh",
+                  width: "8vh",
                   boxShadow: "2px 4px 4px rgba(0, 0, 0, 0.25)",
 
                   '&:hover': {
@@ -156,7 +153,7 @@ function TitleFrame({ text }) {
                 }
               })}
               onClick={() => setOpened(true)}>
-              <Image src="/MenuBars.svg" maxWidth="99%" width="48px" align="center" />
+              <Image src="/MenuBars.svg" width="100%" align="center" />
             </Button>
           </div>
         </div >
