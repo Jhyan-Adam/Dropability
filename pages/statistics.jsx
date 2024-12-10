@@ -9,15 +9,18 @@ import { useRouter } from "next/router";
 import fsPromises from 'fs/promises';
 import path from 'path'
 import TitleFrame from "../components/TitleFrame";
-import { generateBinomialChart, generateDiscreteChart } from '../algorithms/Graphing';
+//import { generateBinomialChart, generateDiscreteChart } from '../algorithms/Graphing';
+import * as graphing from '../algorithms/Graphing';
+Object.assign(globalThis, graphing);
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Filler, BarElement)
 
-//Investigate server-side rendering here; bugfix for placeholder in Mantine 7.x
+
+//Investigate server-side rendering here; also bugfix added for placeholder image in Mantine 7.x
 export async function getStaticProps() {
     const filePath = path.join(process.cwd(), 'minecraftData.json');
     const jsonData = await fsPromises.readFile(filePath);
-    const objectData = JSON.parse(jsonData);
+    const objectData = await JSON.parse(jsonData);
 
     return {
         props: objectData
@@ -25,8 +28,8 @@ export async function getStaticProps() {
 }
 
 
-function fetchItemData(props, itemIDfromURL) {
-    const itemsTable = props.items;
+function fetchItemData(objectData, itemIDfromURL) {
+    const itemsTable = objectData.items;
     //let itemName, itemDescription;
 
     const matchingItem = itemsTable.find(item => item.gameID == itemIDfromURL);
@@ -37,12 +40,12 @@ function fetchItemData(props, itemIDfromURL) {
 }
 
 
-function fetchSourceData(props, itemIDfromURL) {
-    const itemsTable = props.items;
-    const bridgeTable = props.javaItemSourceLink;
-    const sourcesTable = props.sources;
-    const binomialTable = props.javaBinomialSources;
-    const CDFTable = props.javaCDFSources;
+function fetchSourceData(objectData, itemIDfromURL) {
+    const itemsTable = objectData.items;
+    const bridgeTable = objectData.javaItemSourceLink;
+    const sourcesTable = objectData.sources;
+    const binomialTable = objectData.javaBinomialSources;
+    const CDFTable = objectData.javaCDFSources;
     let sourceArray = [];
 
     //returns matching item entry from itemsTable
@@ -76,17 +79,16 @@ function fetchSourceData(props, itemIDfromURL) {
         }
     }
 
-    //"\?outcomeCount\?": [1-9]+.0,\n (regex used to clean JSON database)
     //RETURN
     return sourceArray;
 }
 
 
-export default function statisticsPage(props) {
+export default function statisticsPage(objectData) {
     const router = useRouter();
     const itemIDfromURL = router.query["item"];
-    const itemData = fetchItemData(props, itemIDfromURL)
-    const sourceArray = fetchSourceData(props, itemIDfromURL);
+    const itemData = fetchItemData(objectData, itemIDfromURL)
+    const sourceArray = fetchSourceData(objectData, itemIDfromURL);
     const [numberSlider, setNumberSlider] = useState(1);
     const [probabilitySlider, setProbabilitySlider] = useState(0.9);
     const { hovered: probabilitySliderIsHovered, ref: probabilitySliderHoverRef } = useHover();
@@ -127,6 +129,7 @@ export default function statisticsPage(props) {
             )
         }
     }
+
     return (
         //Maybe add a new element indicating item drop type (Binomial or CDF)
         //Maybe 
