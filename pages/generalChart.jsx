@@ -6,6 +6,7 @@ import { Bar, Line } from 'react-chartjs-2';
 import TitleFrame from "../components/TitleFrame";
 import { generateHorizontalLineData, generateBinomialOutputData } from '../algorithms/Graphing';
 
+
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Filler, BarElement)
 
 function generateChart( //split up chart types into 2 functions for reusability standardisation

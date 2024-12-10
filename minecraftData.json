@@ -1872,7 +1872,7 @@
         {
             "sourceID": 107.0,
             "sourceName": "Diamond Ore",
-            "sourceText": "Diamond ore drops 1 emerald without fortune.",
+            "sourceText": "Diamond ore drops 1 diamond without fortune.",
             "sourceIndex": 1.0,
             "type": false,
             "Enchantment": 4.0,

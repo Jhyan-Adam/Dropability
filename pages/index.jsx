@@ -55,16 +55,16 @@ export default function HomePage() {
                   maxWidth: "600px",
                   width: "fit-content",
                   height: "fit-content",
-                  padding: "2% 3% 2% 3%",
+                  padding: "2% 3% 3% 3%",
                   background: "#1CE3CB",
                   borderRadius: "14px",
                   boxShadow: "0px 6px 14px rgba(0, 0, 0, 0.25)",
                 }}>
-                <Image src='/MinecraftTitle.png' alt="Minecraft"/>
+                <Image src='/MinecraftTitle.png' alt="Minecraft" />
               </Button>
             </Link>
             <Button
-            //Button width/height inconsistent because title pngs include transparent space when sizing
+              //Button width/height inconsistent because title pngs include transparent space when sizing
               style={{
                 maxWidth: "600px",
                 width: "fit-content",
@@ -73,11 +73,20 @@ export default function HomePage() {
                 background: "#1CE3CB",
                 borderRadius: "14px",
                 boxShadow: "0px 6px 14px rgba(0, 0, 0, 0.25)",
+                display: "none"
               }}>
-              <Image src='/EldenRingTitle.png' alt="Elden Ring"/>
+              <Image src='/EldenRingTitle.png' alt="Elden Ring" />
             </Button>
-          </div>
-        </Paper>
+            <Text
+              style={{
+                fontSize: "180%",
+                lineHeight: "80%",
+                textAlign: "center" 
+              }}>
+            That's all there is for now <br /><br /> ⬤‿⬤
+          </Text>
+        </div>
+      </Paper >
       </>
     );
   }

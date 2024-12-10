@@ -39,7 +39,7 @@ export function generateBinomialChartData(axisLimX = 1000, pValue = 0.01, [numbe
             //Also when using the probability slider this does not always align to the curve because the x-coordinate snaps to the closest value. 
             //Maybe use a floor or ceiling function? I'm not entirely sure how to fix this yet...
             {
-                label: "P(N ≥ 1 | n = "+numberFromSlider+")",
+                label: "P(N ≥ 1 | n = " + numberFromSlider + ")",
                 data: generateHorizontalLineData(pValue, numberFromSlider, probabilityFromSlider, probabilitySliderIsHovered)
             },
             //NEED VERTICAL LINE CORRESPONDENT HERE; also needs a similar readout for N(trials)
@@ -51,7 +51,7 @@ export function generateBinomialChartData(axisLimX = 1000, pValue = 0.01, [numbe
 
 
 //This function currently generates a PMF instead of a CDF
-export function generateDiscreteChartData(pVector= [[1, 2, 3, 4, 5], [0.2, 0.2, 0.2, 0.2, 0.2]], [numberFromSlider, setNumberSlider], [probabilityFromSlider, setProbabilitySlider], probabilitySliderIsHovered) {
+export function generateDiscreteChartData(pVector = [[1, 2, 3, 4, 5], [0.2, 0.2, 0.2, 0.2, 0.2]], [numberFromSlider, setNumberSlider], [probabilityFromSlider, setProbabilitySlider], probabilitySliderIsHovered) {
     const chartData = {
         labels: pVector[0],
         datasets: [
@@ -90,104 +90,105 @@ export function generateBinomialChart(
     { probabilitySliderIsHovered, probabilitySliderHoverRef },
     axisLimX) {
 
-    return <Card
-        sx={{// Issues with this: inconsistent size and changes on refresh for some reason
-            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-            minWidth: "400px",
-            height: "fit-content"
-        }}>
-        <CardSection sx={{ paddingInlineStart: "4%" }}>
-            <Text
-                sx={{//make function of theme -> ??? I forgot what I meant here
-                    fontSize: "200%",
-                    color: "cornflowerblue",
-                    fontStyle: "normal",
-                    letterSpacing: "0.15em",
-                    fontWeight: "700",
-                    textAlign: "start",
-                    padding: "4%",
-                }}>
-                {sourceName}
-            </Text>
-        </CardSection>
-        <Line
-            //THIS IS WHERE YOU WILL IMPORT ITEM'S CUSTOM DATA - perhaps make n a function of p to avoid overly large data? <----- DONE
-            //width and height parameters are inverted here for some reason
-            //height={"60vh"}
-            data={generateBinomialChartData(axisLimX, pValue, [numberSlider, setNumberSlider], [probabilitySlider, setProbabilitySlider], probabilitySliderIsHovered)}
-            options={{
-                animation: false,
-                plugins: {
-                    decimation: {
-                        enabled: true,
-                        algorithm: 'lttb',
-                        //samples: 10
-                    }
-                },
-                responsive: true, //not working: investigate
-                borderColor: '#4BC0C0',
-                backgroundColor: "#1CE3CB22",
-                datasets: { line: { pointRadius: "0" } }
-            }}
-        />
-        <CardSection sx={{ maxWidth: "600px" }}>
-            <Text
-                sx={{
-                    fontSize: "120%",
-                    color: "gray",
-                    fontStyle: "normal",
-                    letterSpacing: "0.15em",
-                    fontWeight: "700",
-                    textAlign: "start",
-                    padding: "2% 4% 3% 4%",
-                    wordWrap: "break-word",
-                }}>
-                {sourceText}
-            </Text>
-        </CardSection>
-        <div>
-            <Slider
-                styles={(theme) => ({
-                    thumb: {
-                        height: 16,
-                        width: 16,
-                        backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
-                        borderWidth: 1,
-                        boxShadow: theme.shadows.sm,
+    return (
+        <Card
+            sx={{// Issues with this: inconsistent size and changes on refresh for some reason
+                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                minWidth: "400px",
+                height: "fit-content"
+            }}>
+            <CardSection sx={{ paddingInlineStart: "4%" }}>
+                <Text
+                    sx={{//make function of theme -> ??? I forgot what I meant here
+                        fontSize: "200%",
+                        color: "cornflowerblue",
+                        fontStyle: "normal",
+                        letterSpacing: "0.15em",
+                        fontWeight: "700",
+                        textAlign: "start",
+                        padding: "4%",
+                    }}>
+                    {sourceName}
+                </Text>
+            </CardSection>
+            <Line
+                //width and height parameters are inverted here for some reason
+                //height={"60vh"}
+                data={generateBinomialChartData(axisLimX, pValue, [numberSlider, setNumberSlider], [probabilitySlider, setProbabilitySlider], probabilitySliderIsHovered)}
+                options={{
+                    animation: false,
+                    plugins: {
+                        decimation: {
+                            enabled: true,
+                            algorithm: 'lttb',
+                            //samples: 10
+                        }
                     },
-                })}
-                value={numberSlider}
-                onChange={setNumberSlider}
-                onChangeEnd={(val) => setProbabilitySlider(1 - ((1 - pValue) ** val))}
-                min={1}
-                max={axisLimX}
-                precision={0}
-                step={Math.ceil(axisLimX / 1000)}
-                disabled={false}
+                    responsive: true, //not working: investigate
+                    borderColor: '#4BC0C0',
+                    backgroundColor: "#1CE3CB22",
+                    datasets: { line: { pointRadius: "0" } }
+                }}
             />
-            <Slider
-                styles={(theme) => ({
-                    thumb: {
-                        height: 16,
-                        width: 16,
-                        backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
-                        borderWidth: 1,
-                        boxShadow: theme.shadows.sm,
-                    },
-                })}
-                value={probabilitySlider}
-                onChange={setProbabilitySlider}
-                onChangeEnd={(val) => setNumberSlider(Math.round(Math.log(1 - Math.min(val, 0.9999)) / Math.log(1 - pValue)))}
-                min={0}
-                max={1}
-                precision={3}
-                step={0.001}
-                ref={probabilitySliderHoverRef}
-                disabled={false}
-            />
-        </div>
+            <CardSection sx={{ maxWidth: "600px" }}>
+                <Text
+                    sx={{
+                        fontSize: "120%",
+                        color: "gray",
+                        fontStyle: "normal",
+                        letterSpacing: "0.15em",
+                        fontWeight: "700",
+                        textAlign: "start",
+                        padding: "2% 4% 3% 4%",
+                        wordWrap: "break-word",
+                    }}>
+                    {sourceText}
+                </Text>
+            </CardSection>
+            <div>
+                <Slider
+                    styles={(theme) => ({
+                        thumb: {
+                            height: 16,
+                            width: 16,
+                            backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
+                            borderWidth: 1,
+                            boxShadow: theme.shadows.sm,
+                        },
+                    })}
+                    value={numberSlider}
+                    onChange={setNumberSlider}
+                    onChangeEnd={(val) => setProbabilitySlider(1 - ((1 - pValue) ** val))}
+                    min={1}
+                    max={axisLimX}
+                    precision={0}
+                    step={Math.ceil(axisLimX / 1000)}
+                    disabled={false}
+                />
+                <Slider
+                    styles={(theme) => ({
+                        thumb: {
+                            height: 16,
+                            width: 16,
+                            backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
+                            borderWidth: 1,
+                            boxShadow: theme.shadows.sm,
+                        },
+                    })}
+                    value={probabilitySlider}
+                    onChange={setProbabilitySlider}
+                    onChangeEnd={(val) => setNumberSlider(Math.round(Math.log(1 - Math.min(val, 0.9999)) / Math.log(1 - pValue)))}
+                    min={0}
+                    max={1}
+                    precision={3}
+                    step={0.001}
+                    ref={probabilitySliderHoverRef}
+                    disabled={false}
+                />
+            </div>
 
-    </Card >
+        </Card >
+    )
 }
 
 
@@ -198,49 +199,51 @@ export function generateDiscreteChart(
     [numberSlider, setNumberSlider],
     [probabilitySlider, setProbabilitySlider],
     { probabilitySliderIsHovered, probabilitySliderHoverRef }) {
-        
-        const pValue = 0.01;
 
-        return <Card
-        sx={{// Issues with this: inconsistent size and changes on refresh for some reason
-            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-            minWidth: "400px",
-            height: "fit-content"
-        }}>
-        <CardSection sx={{ paddingInlineStart: "4%" }}>
-            <Text
-                sx={{//make function of theme -> ??? I forgot what I meant here
-                    fontSize: "200%",
-                    color: "cornflowerblue",
-                    fontStyle: "normal",
-                    letterSpacing: "0.15em",
-                    fontWeight: "700",
-                    textAlign: "start",
-                    padding: "4%",
-                }}>
-                {sourceName}
-            </Text>
-        </CardSection>
-        <Bar
-            data={generateDiscreteChartData(pVector, [numberSlider, setNumberSlider], [probabilitySlider, setProbabilitySlider], probabilitySliderIsHovered)}
-        />
-        <CardSection sx={{ maxWidth: "600px" }}>
-            <Text
-                sx={{
-                    fontSize: "120%",
-                    color: "gray",
-                    fontStyle: "normal",
-                    letterSpacing: "0.15em",
-                    fontWeight: "700",
-                    textAlign: "start",
-                    padding: "2% 4% 3% 4%",
-                    wordWrap: "break-word",
-                }}>
-                {sourceText}
-            </Text>
-        </CardSection>
-        <div>
-        </div>
+    const pValue = 0.01;
 
-    </Card >
+    return (
+        <Card
+            sx={{// Issues with this: inconsistent size and changes on refresh for some reason
+                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                minWidth: "400px",
+                height: "fit-content"
+            }}>
+            <CardSection sx={{ paddingInlineStart: "4%" }}>
+                <Text
+                    sx={{//make function of theme -> ??? I forgot what I meant here
+                        fontSize: "200%",
+                        color: "cornflowerblue",
+                        fontStyle: "normal",
+                        letterSpacing: "0.15em",
+                        fontWeight: "700",
+                        textAlign: "start",
+                        padding: "4%",
+                    }}>
+                    {sourceName}
+                </Text>
+            </CardSection>
+            <Bar
+                data={generateDiscreteChartData(pVector, [numberSlider, setNumberSlider], [probabilitySlider, setProbabilitySlider], probabilitySliderIsHovered)}
+            />
+            <CardSection sx={{ maxWidth: "600px" }}>
+                <Text
+                    sx={{
+                        fontSize: "120%",
+                        color: "gray",
+                        fontStyle: "normal",
+                        letterSpacing: "0.15em",
+                        fontWeight: "700",
+                        textAlign: "start",
+                        padding: "2% 4% 3% 4%",
+                        wordWrap: "break-word",
+                    }}>
+                    {sourceText}
+                </Text>
+            </CardSection>
+            <div>
+            </div>
+
+        </Card >
+    )
 }
