@@ -61,7 +61,7 @@ export default function ItemsPage(props) {
                         {
                             //NOTE: itemName in URL String does nothing as of yet
                             items?.map(item =>
-                                <Link href={"/statistics?item=" + item.gameID + "&" + item.itemName}> 
+                                <Link href={"/" + item.gameID}> 
                                     <Button
                                         style={{
                                             width: "fit-content",
