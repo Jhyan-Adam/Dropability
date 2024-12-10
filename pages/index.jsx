@@ -81,7 +81,8 @@ export default function HomePage() {
               style={{
                 fontSize: "180%",
                 lineHeight: "80%",
-                textAlign: "center" 
+                textAlign: "center",
+                color: "#858585"
               }}>
             That's all there is for now <br /><br /> ⬤‿⬤
           </Text>

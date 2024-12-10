@@ -4,7 +4,7 @@
             "itemID": 1.0,
             "itemName": "Humanoid Hostile Mob Equipment",
             "gameID": "equipment",
-            "itemDescription": "Any equipment (tools, weapons or armour) that a zombie, skeleton, [more?] spawned with ",
+            "itemDescription": "Any equipment (tools, weapons or armour) that a zombie, skeleton, [more?] spawned with.",
             "?sourceCount?": "1*",
             "[completed?]": "?",
             "adminNotes": "ATTENTION REQUIRED also mention exceptions",
@@ -1800,7 +1800,7 @@
         {
             "sourceID": 99.0,
             "sourceName": "Drowned",
-            "sourceText": "6.25% of drowned spawb holding tridents and of these there is an 8.5% chance of dropping a trident.",
+            "sourceText": "There is an 8.5% chance of a drowned dropping a trident, if holding one. 6.25% of drowned spawn holding tridents.",
             "sourceIndex": 1.0,
             "type": true,
             "Enchantment": 1.0,

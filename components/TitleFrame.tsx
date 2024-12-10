@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Paper, Button, Image, Drawer, Text } from '@mantine/core';
 import { ColorSchemeToggle } from './ColorSchemeToggle';
 
@@ -24,7 +24,7 @@ function TitleFrame({ text }) {
           style={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "flex-end",
+            alignItems: "center",
             gap: "8px",
           }}>
           <Link href="/">

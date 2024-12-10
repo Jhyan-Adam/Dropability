@@ -27,7 +27,7 @@ export default function App(props: AppProps) {
             colors: {
               background: "#F5F5F5",
               button: "#1CE3CB",
-              dimCyan: "#4BC0C0",
+              dimCyan: "#4BC0C0"
             },
             //like the fontSizes, I must add my own site-wide standards here
             fontSizes: {
