@@ -1,7 +1,9 @@
-import { Button, Image, Paper, ScrollArea } from '@mantine/core';
+import { useState, createContext } from 'react';
+import { TextInput, Button, Image, Paper, ScrollArea } from '@mantine/core';
 import Link from 'next/link'
 import TitleFrame from "../components/TitleFrame";
 import SearchBar from "../components/SearchBar";
+//import SearchBar from "../components/SearchBar";
 import fsPromises from 'fs/promises';
 import path from 'path'
 
@@ -17,15 +19,12 @@ export async function getStaticProps() {
     }
 }
 
-export default function ItemsPage(props) {
-
-    //console.log(props);
-    const items = props.items;
-    //let buttonsArr = [];
+export default function ItemsPage(objectData) {
+    const items = objectData.items;
+    const [searchValue, setSearchValue] = useState("");
 
     return (
         <>
-
             <Paper
                 sx={(theme) => ({
                     height: "100vh",
@@ -36,8 +35,10 @@ export default function ItemsPage(props) {
                     padding: 0,
                 })}>
                 <TitleFrame />
-                <SearchBar />
-                {/* <div>{items+"1"}</div>  THIS IS FOR DEBUGGING */}
+                <SearchBar
+                    searchValue={searchValue} 
+                    setSearchValue={setSearchValue} />
+                {/* <div>{items + "1"}</div> */}
                 <ScrollArea
                     sx={{
                         height: "100%",
@@ -60,8 +61,8 @@ export default function ItemsPage(props) {
                         }}>
                         {
                             //NOTE: itemName in URL String does nothing as of yet
-                            items?.map(item =>
-                                <Link href={"/" + item.gameID}> 
+                            items?.filter(item => item.gameID.includes(searchValue)).map(item =>
+                                <Link href={"/" + item.gameID}>
                                     <Button
                                         style={{
                                             width: "fit-content",
@@ -73,7 +74,7 @@ export default function ItemsPage(props) {
                                             alignItems: "center",
                                         }}>
                                         <Image
-                                            style={{imageRendering: "pixelated"}}
+                                            style={{ imageRendering: "pixelated" }}
                                             src={`/minecraftItemIcons/${item.gameID}.png`}
                                             alt={item.itemName}
                                             width={"9vmin"}
@@ -81,7 +82,8 @@ export default function ItemsPage(props) {
                                             withPlaceholder
                                         />
                                     </Button>
-                                </Link>)
+                                </Link>
+                            )
                         }
                     </div>
                 </ScrollArea>
