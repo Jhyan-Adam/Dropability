@@ -5,7 +5,6 @@ import { Card, Paper, Image, Text, ScrollArea, Slider, CardSection, } from '@man
 import { useHover } from '@mantine/hooks';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler, Animation, BarElement } from 'chart.js' //Unused stuff might be useful?
 import TitleFrame from "../components/TitleFrame";
-//import { generateBinomialChart, generateDiscreteChart } from '../algorithms/Graphing';
 import * as graphing from '../algorithms/Graphing';
 Object.assign(globalThis, graphing);
 
@@ -76,6 +75,7 @@ export default function statisticsPage({ sourceArray, item }) {
     const [numberSlider, setNumberSlider] = useState(1);
     const [probabilitySlider, setProbabilitySlider] = useState(0.9);
     const { hovered: probabilitySliderIsHovered, ref: probabilitySliderHoverRef } = useHover();
+    const [selected, setSelected] = useState(false);
 
     let cardArr = [];
 
@@ -84,17 +84,16 @@ export default function statisticsPage({ sourceArray, item }) {
         if (sourceArray[entry].source.type == true) {
             const sourceName = sourceArray[entry].source.sourceName;
             const sourceText = sourceArray[entry].source.sourceText;
-            const pValue = eval(sourceArray[entry].binomialData.pValue);
-            const axisLimX = Math.ceil(Math.log(0.0001 + 1 - 0.99) / Math.log((1 - pValue)));
+            const pValueItem = eval(sourceArray[entry].binomialData.pValue);
+            const axisLimX = Math.ceil(Math.log(0.0001) / Math.log(1 - pValueItem)); //{n : (1-p)^n = 0.0001} <=> {n : 1-(1-p)^n = 0.999} ; Find alternative to have continuous-length horizontal lines
 
             cardArr.push(
                 generateBinomialChart(
                     sourceName,
                     sourceText,
-                    pValue,
+                    pValueItem,
                     [numberSlider, setNumberSlider],
                     [probabilitySlider, setProbabilitySlider],
-                    { probabilitySliderIsHovered, probabilitySliderHoverRef },
                     axisLimX)
             )
         } else if (sourceArray[entry].source.type == false) {
@@ -106,10 +105,7 @@ export default function statisticsPage({ sourceArray, item }) {
                 generateDiscreteChart(
                     sourceName,
                     sourceText,
-                    pVector,
-                    [numberSlider, setNumberSlider],
-                    [probabilitySlider, setProbabilitySlider],
-                    { probabilitySliderIsHovered, probabilitySliderHoverRef })
+                    pVector)
             )
         }
     }

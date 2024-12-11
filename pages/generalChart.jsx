@@ -4,7 +4,7 @@ import { Card, CardSection, Paper, ScrollArea, Slider, Text } from '@mantine/cor
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler, BarElement } from 'chart.js' //Title, Tooltip, Legend? Make use of these!
 import { Bar, Line } from 'react-chartjs-2';
 import TitleFrame from "../components/TitleFrame";
-import { generateHorizontalLineData, generateBinomialOutputData } from '../algorithms/Graphing';
+import { Sliders, generateBinomialChartData } from '../algorithms/Graphing';
 
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Filler, BarElement)
@@ -17,22 +17,7 @@ function generateChart( //split up chart types into 2 functions for reusability 
     axisLimX) {
 
     const pVectorTemporary = [[1, 2, 3, 4, 5, 6, 7], [0.1216, 0.2702, 0.2852, 0.1901, 0.0898, 0.0319, 0.0197]]
-    const lineChartData = {
-        labels: Array.from(Array(axisLimX).keys()),
-        datasets: [
-            {
-                label: 'GENERAL GRAPH',
-                data: generateBinomialOutputData(axisLimX, pValueSlider),
-                fill: "origin",
-                tension: "0.1"
-            },
-            {
-                label: 'TRIAL COUNT LINE',
-                data: generateHorizontalLineData(pValueSlider, numberSlider, probabilitySlider, probabilitySliderIsHovered),
-                pointRadius: "0",
-            }
-        ]
-    };
+    const lineChartData = generateBinomialChartData(axisLimX, pValueSlider, probabilitySlider, numberSlider, probabilitySliderIsHovered)
 
     const barChartData = {
         labels: pVectorTemporary[0],
@@ -132,43 +117,7 @@ function generateChart( //split up chart types into 2 functions for reusability 
                                 pointRadius: "0"
                             }}
                         />
-                        <Slider
-                            styles={(theme) => ({
-                                thumb: {
-                                    height: 16,
-                                    width: 16,
-                                    backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
-                                    borderWidth: 1,
-                                    boxShadow: theme.shadows.sm,
-                                },
-                            })}
-                            value={numberSlider}
-                            onChange={setNumberSlider}
-                            onChangeEnd={(val) => setProbabilitySlider(1 - ((1 - pValueSlider) ** val))} //THIS LINE FIXES TEMPORARY HOVER PROBLEM
-                            min={0}
-                            max={axisLimX}
-                            disabled={false}
-                        />
-                        <Slider
-                            styles={(theme) => ({
-                                thumb: {
-                                    height: 16,
-                                    width: 16,
-                                    backgroundColor: theme.colorScheme === 'light' ? theme.colors.gray[5] : theme.colors.dark[5],
-                                    borderWidth: 1,
-                                    boxShadow: theme.shadows.sm,
-                                },
-                            })}
-                            value={probabilitySlider}
-                            onChange={setProbabilitySlider} //Currently this is ugly and stays continuous for small values of axis limit (n)
-                            onChangeEnd={(val) => setNumberSlider(Math.round(Math.log(1 - Math.min(val, 0.9999)) / Math.log(1 - pValueSlider)))} //THIS LINE FIXES TEMPORARY HOVER PROBLEM
-                            min={0}
-                            max={1}
-                            precision={3}
-                            step={0.001}
-                            ref={probabilitySliderHoverRef}
-                            disabled={false}
-                        />
+                        {Sliders(pValueSlider, [numberSlider, setNumberSlider], [probabilitySlider, setProbabilitySlider], axisLimX)}
                         <Slider
                             styles={(theme) => ({
                                 thumb: {
