@@ -3,9 +3,10 @@ import { Card, Paper, Image, Text, ScrollArea, Slider, CardSection, } from '@man
 import { Line, Bar } from 'react-chartjs-2';
 
 export function generateHorizontalLineData(pValueItem, probabilityFromSlider) {
-    const n = Math.round(Math.log(1 - Math.min(probabilityFromSlider, 0.9999)) / Math.log(1 - pValueItem));
+    const n = Math.round(Math.log(1 - probabilityFromSlider) / Math.log(1 - pValueItem));
+    const p = 1 - (1 - pValueItem)**n
 
-    return Array(n + 1).fill(probabilityFromSlider);
+    return Array(n + 1).fill(p);
 }
 
 
