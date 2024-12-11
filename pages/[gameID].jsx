@@ -165,7 +165,7 @@ export default function statisticsPage({ sourceArray, item }) {
                                 background: theme.colors.button,
                                 borderRadius: "32%"
                             })}>
-                            <Image style={{ imageRendering: "pixelated" }} withPlaceholder src={`/minecraftItemIcons/${item.gameID}.png`} alt={item.gameID} height={"9vmin"} />
+                            <Image style={{ imageRendering: "pixelated" }} /* withPlaceholder */ src={`/minecraftItemIcons/${item.gameID}.webp`} alt={item.gameID} height={"9vmin"} />
                         </Card>
                         <Card
                             sx={(theme) => ({

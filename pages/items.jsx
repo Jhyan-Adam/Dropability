@@ -75,11 +75,12 @@ export default function ItemsPage(objectData) {
                                         }}>
                                         <Image
                                             style={{ imageRendering: "pixelated" }}
-                                            src={`/minecraftItemIcons/${item.gameID}.png`}
+                                            src={`/minecraftItemIcons/${item.gameID}.webp`}
                                             alt={item.itemName}
                                             width={"9vmin"}
                                             height={"9vmin"}
-                                            withPlaceholder
+                                            //withPlaceholder //disabled for now - temorarily fix for reload error
+                                            //placeholder={"/minecraftItemIcons/apple.png"} //??? can't get this to work
                                         />
                                     </Button>
                                 </Link>

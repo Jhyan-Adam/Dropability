@@ -60,7 +60,7 @@ export default function HomePage() {
                   borderRadius: "14px",
                   boxShadow: "0px 6px 14px rgba(0, 0, 0, 0.25)",
                 }}>
-                <Image src='/MinecraftTitle.png' alt="Minecraft" />
+                <Image src='/MinecraftTitle.webp' alt="Minecraft" />
               </Button>
             </Link>
             <Button
