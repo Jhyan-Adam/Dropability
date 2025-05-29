@@ -1,39 +1,35 @@
-# Mantine Next Template
+# Visual Preview
+(scroll past the images to get to the 'about' section.)
+## Items Page Light Mode
+![Items Page Light Mode](https://github.com/Jhyan-Adam/Dropability/blob/master/Items%20Page%20Light%20Mode.png)
+## General Chart Page Light Mode
+![General Chart Light Mode](https://github.com/Jhyan-Adam/Dropability/blob/master/General%20Chart%20Light%20Mode.png)
+## Items Page Dark Mode
+![Items Page Dark Mode](https://github.com/Jhyan-Adam/Dropability/blob/master/Items%20Page%20Dark%20Mode.png)
+## General Chart Page Dark Mode
+![General Chart Dark Mode](https://github.com/Jhyan-Adam/Dropability/blob/master/General%20Chart%20Dark%20Mode.png)
 
-Get started with Mantine + Next with just a few button clicks.
-Click `Use this template` button at the header of repository or [follow this link](https://github.com/mantinedev/mantine-next-template/generate) and
-create new repository with `@mantine` packages. Note that you have to be logged in to GitHub to generate template.
 
-## Features
+# What is This Website?
+This website is a compendium of items from video games that have been implemented as random drops. 
+The website is intended to make understanding your drop rates clear through interactive visualisation of these problems with the use of statistical modelling. 
+If instead of blindly grinding, you want to know your chances of obtaining items, the data here will be useful to you.
 
-This template comes with several essential features:
+It lists two types; the first type includes all items that have a fixed chance for one or more to drop, as well as a fixed chance for none to drop (they may not drop at all). 
+The second type includes all items which may be dropped multiple times, but for which the quantity of items that actually drop is assigned to random chance. 
+For these second-type items, each quantity has its own chance, but at least one is always guaranteed to drop.
 
-- Server side rendering setup for Mantine
-- Color scheme is stored in cookie to avoid color scheme mismatch after hydration
-- Storybook with color scheme toggle
-- Jest with react testing library
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+# Why did I Create This Website?
+Multiple reasons apply here. 
 
-## npm scripts
+Initially, I was extremely annoyed while trying to get a trident in Minecraft because all wikis just stated the basic drop-rate.
+Most importantly, I am passionate about creating cool stuff, like a really dynamic and beautifully designed website.
+The word "cool" here also applies to the mathematics and statistics behind the website.
 
-### Build and dev scripts
+I find that interesting, and I think everyone should too (or at least appreciate it; maths gets too much hate societally).
+The broader reason is that I like to create hands-on projects that accelerate my learning through experience. 
+I learned about these distributions in my studies, so I thought it would be enriching to create a project directly using the concepts.
+The possibility of potentially monetising the website with non-intrusive ads or other features is a nice bonus.
 
-- `dev` – start dev server
-- `build` – bundle application for production
-- `export` – exports static website to `out` folder
-- `analyze` – analyzes application bundle with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
-
-### Testing scripts
-
-- `typecheck` – checks TypeScript types
-- `lint` – runs ESLint
-- `prettier:check` – checks files with Prettier
-- `jest` – runs jest tests
-- `jest:watch` – starts jest watch
-- `test` – runs `jest`, `prettier:check`, `lint` and `typecheck` scripts
-
-### Other scripts
-
-- `storybook` – starts storybook dev server
-- `storybook:build` – build production storybook bundle to `storybook-static`
-- `prettier:write` – formats all files with Prettier
+I am a student, so I just started this as a project to broaden my skillset and put my knowledge to use, with the possibility of monetisation on the side.
+While I am studying a field unrelated to web development, I want to go that much further and put in effort beyond just what is expected of me.
